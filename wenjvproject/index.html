@@ -1,0 +1,1351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/public.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+    <style>
+        .special-gift-pack {width: 1190px; padding-top: 30px; font-size: 0; white-space: nowrap; box-sizing: border-box;font-family: 思源黑体;}
+        .special-gift-pack .spgp-left, .special-gift-pack .spgp-right {width: 595px; display: inline-block; vertical-align: top;}
+        .special-gift-pack .spgp-left, .special-gift-pack .spgpr-tcl-list {cursor:pointer;}
+        .special-gift-pack .spgp-left h1 {font-size: 16px; line-height: 38px; margin: 0; color: #333; font-weight: 400; padding-left: 15px; position: relative;}
+        .special-gift-pack .spgp-left h1:before {content: ''; display: block; position: absolute; top: 9px; left: 0; width: 5px; height: 18px; background: #f53318;}
+        .special-gift-pack .spgp-left img {width: 595px; height: 250px; border-top: 1px solid #f53318;}
+        .special-gift-pack .spgp-right .spgpr-tab {font-size: 0; height: 38px;}
+        #gn-main .gn-main-nei .gift-pack .gift-right .gift-tab .tab-list {display: inline-block; font-size: 16px; vertical-align: middle; color: #333; font-weight: 400; width: 125px; position: relative; cursor: pointer; text-align: center; line-height: 38px; transition: all 0.15s ease-in-out;}
+        #gn-main .gn-main-nei .gift-pack .gift-right .gift-tab .tab-list:after {content: ''; display: block; width: 1px; height: 16px; background: #ccc; position: absolute; right: 0; top: 11px;}
+        #gn-main .gn-main-nei .gift-pack .gift-right .gift-tab .tab-list:last-child:after {display: none;}
+        #gn-main .gn-main-nei .gift-pack .gift-right .gift-tab .tab-list.active {color: #fff; background: rgb(215,22,53);}
+        #gn-main .gn-main-nei .gift-pack .gift-right .gift-tab .tab-list.active:after {display: none;}
+        #gn-main .gn-main-nei .gift-pack .gift-right .gift-tab .tab-list.myafter:after {display: none;}
+        .special-gift-pack .spgp-right .spgpr-tab-con {width: 595px; height: 250px; border-top: 1px solid #f53318; border-right: 1px solid #ccc; border-bottom: 1px solid #ccc;}
+        .special-gift-pack .spgp-right .spgpr-tab-con .spgpr-tab-con-list {display: none; font-size: 0;}
+        .special-gift-pack .spgp-right .spgpr-tab-con .spgpr-tab-con-list.active {display: block;}
+        .special-gift-pack .spgp-right .spgpr-tab-con .spgpr-tab-con-list .spgpr-tcl-list {display: inline-block; width: 198px; height: 250px; position: relative; border-right: 1px solid #ccc;background: white;}
+        .special-gift-pack .spgp-right .spgpr-tab-con .spgpr-tab-con-list .spgpr-tcl-list .spgpr-tcl-list-tag {width: 67px; font-size: 12px; height: 25px; color: #fff; line-height: 25px; right: -1px; top: 4px; position: absolute; padding-left: 12px; background: transparent url(./views/mall/images/special-02.jpg) 0 0 no-repeat; background-size: 67px 25px; box-sizing: border-box; z-index: 2;display: none;}
+        .special-gift-pack .spgp-right .spgpr-tab-con .spgpr-tab-con-list .spgpr-tcl-list:last-child {border-right: none;}
+        .special-gift-pack .spgp-right .spgpr-tab-con .spgpr-tab-con-list .spgpr-tcl-list img {width: 140px; height: 140px; position: absolute; top: 25px; left: 30px;}
+        .special-gift-pack .spgp-right .spgpr-tab-con .spgpr-tab-con-list .spgpr-tcl-list h3 {margin: 0; font-weight: 400; font-size: 14px; line-height: 18px; color: #333; position: absolute; top: 175px; left: 30px; width: 140px; display: -webkit-box; white-space: normal; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden;}
+        .special-gift-pack .spgp-right .spgpr-tab-con .spgpr-tab-con-list .spgpr-tcl-list p {margin: 0; font-weight: 400; position: absolute; color: #d2220a; left: 30px; bottom: 22px; font-size: 14px;}
+        .special-gift-pack .spgp-right .spgpr-tab-con .spgpr-tab-con-list .spgpr-tcl-list p i {font-size: 12px; font-style: normal;}
+        .special-gift-pack .spgp-right .spgpr-tab-con .spgpr-tab-con-list .spgpr-tcl-list p b {display: inline-block; margin-left: 3px; position: relative; color: #999; font-weight: 400;}
+        .special-gift-pack .spgp-right .spgpr-tab-con .spgpr-tab-con-list .spgpr-tcl-list p b:after {content: ''; display: block; width: 100%; height: 1px; top: 48%; left: 0; position: absolute; background: #999;}
+    </style>
+</head>
+<body>
+    <!-- //头部图片区域 -->
+    <div class="top" style="background:#8033d7">
+        <div class="top-img">
+            <a>
+                <img src="imgs/20181107151614_43588.jpg"/>
+            </a>
+        </div>
+    </div>
+    <!-- 头部区域 -->
+    <div id="head">
+        <div class="head-nav">
+            <div class="head-w">
+                <p class="hl">
+                    您好！游客 &nbsp;欢迎来文具1号商城！
+                    <a href="/login.html">登录</a>
+                    <a href="/regist.html" class="f">免费注册</a>
+                </p>
+                <div class="hr">
+                    <ul>
+                        <li><a href="">商城首页</a></li>
+                        <li class="line">|</li>
+                        <li>
+                            <a class="down-drop" href="">会员中心</a>
+                            <ul class="er">
+                                <li><a href="bBOrder.html">全部订单</a></li>
+                                <li><a href="bBOrder.html">代付款订单</a></li>
+                                <li><a href="bBOrder.html">待收货订单</a></li>
+                            </ul>
+                        </li>
+                        <li class="line">|</li>
+                        <li>
+                            <a class="down-drop" href="">我的收藏</a>
+                            <ul class="er">
+                                <li><a href="bBOrder.html">收藏的商品</a></li>
+                                <li><a href="bBOrder.html">收藏的店铺</a></li>
+                            </ul>
+                        </li>
+                        <li class="line">|</li>
+                        <li>
+                            <a class="down-drop" href="">我的福利</a>
+                            <ul class="er">
+                                <li>
+                                    <a href="bBOrder.html" style="width:80px;">我的优惠券</a>
+                                    <span class="dian" style="position: absolute;right:10px;top:1px;background:url(imgs/icon_title_nav4.png) no-repeat 0 0">0</span>
+                                </li>
+                                <li>
+                                    <a href="bBOrder.html" style="width:80px;">我的礼品券</a>
+                                    <span class="dian" style="position: absolute;right:10px;top:30px;background:url(imgs/icon_title_nav4.png) no-repeat 0 0">0</span>
+                                </li>
+                                <li><a href="bBOrder.html">我的奖励金</a></li>
+                                <li><a href="bBOrder.html">我的积分</a></li>
+                            </ul>
+                            </li>
+                        <li class="line">|</li>
+                        <li><a href="">申请商家入驻</a></li>
+                        <li class="line">|</li>
+                        <li><a href="">帮助中心</a></li>
+                        <li class="line">|</li>
+                        <li>
+                            <a class="down-drop" href="">网站导航</a>
+                            <ul class="er">
+                                <li><a href="bBOrder.html">会员体系</a></li>
+                                <li><a href="bBOrder.html">售后政策</a></li>
+                                <li><a href="bBOrder.html">退换流程</a></li>
+                                <li><a href="bBOrder.html">配送费用</a></li>
+                                <li><a href="bBOrder.html">在线客服</a></li>
+                            </ul>
+                        </li>
+                        <li class="line">|</li>
+                        <li><a href="">电子协议</a></li>
+                        <li class="line">
+                            <span class="car" style="background:url(imgs/icon_title1.png) no-repeat 0 0;width:20px;height:20px;margin-top:5px;float:left;display:block;"></span>
+                            <span style="float:left;display:block;"><a class="car-text" href="#">我的购物车</a></span>
+                            <span class="dian" style="background:url(imgs/icon_title_nav4.png) no-repeat 0 0">0</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- logo部分 -->
+    <div id="logo">
+        <div class="logo-x" style="padding:15px 0;">
+            <div class="logo-x1">
+                <a href="/"><img src="imgs/logo1572573523.jpg" widh="130px" height="55px" alt=""></a>
+            </div>
+            <p class="logo-x2">
+                <a href=""><img src="imgs/active_entrancer1540363290.gif" width="190px"; height="55px" alt=""></a>
+            </p>
+            <div class="logo-x4">
+                <p style="display:none;text-align:center;"><a href=""><img src="imgs/active_entrance1536748163.gif" alt=""></a></p>
+                <p style="margin-left:-95px;"><a href=""><img src="imgs/logo_left1_adver1551953599.jpg" alt=""></a></p>
+            </div>
+            <div class="logo-x3">
+                <div class="search">
+                    <form action="./mMSearchGoods.html" method="get">
+                        <input autocomplete="off" name="keywords" type="text" class="a" id="search_ipt" placeholder="亲，这里可以搜索您想要的宝贝，江浙沪满88元包邮！ " value="">
+                        <button id="btnSearch" type="submit">搜 索</button>
+                    </form>
+                </div>
+                <div class="hotkeywords">
+                    <span>热门搜索:</span>
+                    <ul>
+                        <li class="hotw"><a href="" style="color:#c40000">A4纸</a></li>
+                        <li><a href="">文件夹</a></li>
+                        <li><a href="">硒鼓</a></li>
+                        <li><a href="">墨盒</a></li>
+                        <li><a href="">中性笔</a></li>
+                        <li><a href="">订书机</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- nav -->
+    <div id="nav">
+        <div class="nav2">
+            <div class="nav3">
+                <div class="allproducts">
+                    <a href="">全部商品分类</a>
+
+                </div>
+                <ul>
+                    <li><a href="">品牌街</a></li>
+                    <li><a href="">商品列表</a></li>
+                    <li><a href="">文具1号超市</a></li>
+                    <li><a href="">积分商城</a></li>
+                    <li><a href="">设备租贷</a></li>
+                    <li><a href="">特价礼包<img src="imgs/73.gif" alt=""></a></li>
+                    <li><a href="">企业采购工具</a></li>
+                    <li><a href="">清单采购<img src="imgs/68.gif" alt=""></a></li>
+                </ul>
+            </div>
+            <div class="menu">
+                <!-- <div class="menu-hd">
+                    <h2>全部商品分类</h2>
+                </div> -->
+               
+                <ul style="height:450px; z-index:1000">
+                    <li>
+                        <h2><span class="menubg"></span><a href="">办公用品</a></h2>
+                        <div class="mod-subcate">
+                            <div class="mod-subcate-main">
+                                <div class="listinfo">
+                                    <div class="listhead">
+                                        <span style="font-weight: bold;line-height: 25px;float:left;"><a style="color:#c40000;" href="https://www.wjyh.com/office_p3295_c0_b0">书写用品</a></span>
+                                        <span style="line-height:25px;float:right;"><a href="https://www.wjyh.com/office_p3295_c0_b0">更多</a></span>
+                                    </div>
+                                    <ul>
+                                        <li><a href="https://www.wjyh.com/office_p3295_c3319_b0">中性笔 中性笔芯</a></li>
+                                        <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3340_b0">特种笔 特种笔墨水 其它笔</a></li>
+                                        <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3325_b0">铅笔 铅芯</a></li>
+                                        <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3334_b0">修正类 橡皮</a></li>
+                                        <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3335_b0">水彩笔 蜡笔</a></li>
+                                        <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3327_b0">记号笔 记号笔墨水</a></li>
+                                        <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3326_b0">白板笔 白板笔墨水</a></li>
+                                        <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3329_b0">唛克笔 唛克笔墨水</a></li>
+                                        <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3328_b0">荧光笔 荧光笔墨水</a></li>
+                                        <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3332_b0">毛笔 墨汁</a></li>
+                                    </ul>
+                                </div>
+                                <div class="listinfo">
+                                        <div class="listhead">
+                                            <span style="font-weight: bold;line-height: 25px;float:left;"><a style="color:#c40000;" href="https://www.wjyh.com/office_p3295_c0_b0">书写用纸</a></span>
+                                            <span style="line-height:25px;float:right;"><a href="https://www.wjyh.com/office_p3295_c0_b0">更多</a></span>
+                                        </div>
+                                        <ul>
+                                            <li><a href="https://www.wjyh.com/office_p3295_c3319_b0">中性笔 中性笔芯</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3340_b0">特种笔 特种笔墨水 其它笔</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3325_b0">铅笔 铅芯</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3334_b0">修正类 橡皮</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3335_b0">水彩笔 蜡笔</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3327_b0">记号笔 记号笔墨水</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3326_b0">白板笔 白板笔墨水</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3329_b0">唛克笔 唛克笔墨水</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3328_b0">荧光笔 荧光笔墨水</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3332_b0">毛笔 墨汁</a></li>
+                                        </ul>
+                                </div>
+                                <div class="listinfo">
+                                        <div class="listhead">
+                                            <span style="font-weight: bold;line-height: 25px;float:left;"><a style="color:#c40000;" href="https://www.wjyh.com/office_p3295_c0_b0">书写耗材</a></span>
+                                            <span style="line-height:25px;float:right;"><a href="https://www.wjyh.com/office_p3295_c0_b0">更多</a></span>
+                                        </div>
+                                        <ul>
+                                            <li><a href="https://www.wjyh.com/office_p3295_c3319_b0">中性笔 中性笔芯</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3340_b0">特种笔 特种笔墨水 其它笔</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3325_b0">铅笔 铅芯</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3334_b0">修正类 橡皮</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3335_b0">水彩笔 蜡笔</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3327_b0">记号笔 记号笔墨水</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3326_b0">白板笔 白板笔墨水</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3329_b0">唛克笔 唛克笔墨水</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3328_b0">荧光笔 荧光笔墨水</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3332_b0">毛笔 墨汁</a></li>
+                                        </ul>
+                                    </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                            <h2><span class="menubg"></span><a href="">学生用品</a></h2>
+                            <div class="mod-subcate">
+                                <div class="mod-subcate-main">
+                                    <div class="listinfo">
+                                        <div class="listhead">
+                                            <span style="font-weight: bold;line-height: 25px;float:left;"><a style="color:#c40000;" href="https://www.wjyh.com/office_p3295_c0_b0">丰富而为</a></span>
+                                            <span style="line-height:25px;float:right;"><a href="https://www.wjyh.com/office_p3295_c0_b0">更多</a></span>
+                                        </div>
+                                        <ul>
+                                            <li><a href="https://www.wjyh.com/office_p3295_c3319_b0">中性笔 中性笔芯</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3340_b0">特种笔 特种笔墨水 其它笔</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3325_b0">铅笔 铅芯</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3334_b0">修正类 橡皮</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3335_b0">水彩笔 蜡笔</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3327_b0">记号笔 记号笔墨水</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3326_b0">白板笔 白板笔墨水</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3329_b0">唛克笔 唛克笔墨水</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3328_b0">荧光笔 荧光笔墨水</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3332_b0">毛笔 墨汁</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="listinfo">
+                                            <div class="listhead">
+                                                <span style="font-weight: bold;line-height: 25px;float:left;"><a style="color:#c40000;" href="https://www.wjyh.com/office_p3295_c0_b0">是否无误</a></span>
+                                                <span style="line-height:25px;float:right;"><a href="https://www.wjyh.com/office_p3295_c0_b0">更多</a></span>
+                                            </div>
+                                            <ul>
+                                                <li><a href="https://www.wjyh.com/office_p3295_c3319_b0">中性笔 中性笔芯</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3340_b0">特种笔 特种笔墨水 其它笔</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3325_b0">铅笔 铅芯</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3334_b0">修正类 橡皮</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3335_b0">水彩笔 蜡笔</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3327_b0">记号笔 记号笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3326_b0">白板笔 白板笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3329_b0">唛克笔 唛克笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3328_b0">荧光笔 荧光笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3332_b0">毛笔 墨汁</a></li>
+                                            </ul>
+                                    </div>
+                                    <div class="listinfo">
+                                            <div class="listhead">
+                                                <span style="font-weight: bold;line-height: 25px;float:left;"><a style="color:#c40000;" href="https://www.wjyh.com/office_p3295_c0_b0">访问问问</a></span>
+                                                <span style="line-height:25px;float:right;"><a href="https://www.wjyh.com/office_p3295_c0_b0">更多</a></span>
+                                            </div>
+                                            <ul>
+                                                <li><a href="https://www.wjyh.com/office_p3295_c3319_b0">中性笔 中性笔芯</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3340_b0">特种笔 特种笔墨水 其它笔</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3325_b0">铅笔 铅芯</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3334_b0">修正类 橡皮</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3335_b0">水彩笔 蜡笔</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3327_b0">记号笔 记号笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3326_b0">白板笔 白板笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3329_b0">唛克笔 唛克笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3328_b0">荧光笔 荧光笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3332_b0">毛笔 墨汁</a></li>
+                                            </ul>
+                                        </div>
+                                </div>
+                            </div>
+                    </li>
+                    <li>
+                            <h2><span class="menubg"></span><a href="">行政用品</a></h2>
+                            <div class="mod-subcate">
+                                <div class="mod-subcate-main">
+                                    <div class="listinfo">
+                                        <div class="listhead">
+                                            <span style="font-weight: bold;line-height: 25px;float:left;"><a style="color:#c40000;" href="https://www.wjyh.com/office_p3295_c0_b0">范围分为</a></span>
+                                            <span style="line-height:25px;float:right;"><a href="https://www.wjyh.com/office_p3295_c0_b0">更多</a></span>
+                                        </div>
+                                        <ul>
+                                            <li><a href="https://www.wjyh.com/office_p3295_c3319_b0">中性笔 中性笔芯</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3340_b0">特种笔 特种笔墨水 其它笔</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3325_b0">铅笔 铅芯</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3334_b0">修正类 橡皮</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3335_b0">水彩笔 蜡笔</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3327_b0">记号笔 记号笔墨水</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3326_b0">白板笔 白板笔墨水</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3329_b0">唛克笔 唛克笔墨水</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3328_b0">荧光笔 荧光笔墨水</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3332_b0">毛笔 墨汁</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="listinfo">
+                                            <div class="listhead">
+                                                <span style="font-weight: bold;line-height: 25px;float:left;"><a style="color:#c40000;" href="https://www.wjyh.com/office_p3295_c0_b0">位2323</a></span>
+                                                <span style="line-height:25px;float:right;"><a href="https://www.wjyh.com/office_p3295_c0_b0">更多</a></span>
+                                            </div>
+                                            <ul>
+                                                <li><a href="https://www.wjyh.com/office_p3295_c3319_b0">中性笔 中性笔芯</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3340_b0">特种笔 特种笔墨水 其它笔</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3325_b0">铅笔 铅芯</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3334_b0">修正类 橡皮</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3335_b0">水彩笔 蜡笔</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3327_b0">记号笔 记号笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3326_b0">白板笔 白板笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3329_b0">唛克笔 唛克笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3328_b0">荧光笔 荧光笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3332_b0">毛笔 墨汁</a></li>
+                                            </ul>
+                                    </div>
+                                    <div class="listinfo">
+                                            <div class="listhead">
+                                                <span style="font-weight: bold;line-height: 25px;float:left;"><a style="color:#c40000;" href="https://www.wjyh.com/office_p3295_c0_b0">味儿443</a></span>
+                                                <span style="line-height:25px;float:right;"><a href="https://www.wjyh.com/office_p3295_c0_b0">更多</a></span>
+                                            </div>
+                                            <ul>
+                                                <li><a href="https://www.wjyh.com/office_p3295_c3319_b0">中性笔 中性笔芯</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3340_b0">特种笔 特种笔墨水 其它笔</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3325_b0">铅笔 铅芯</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3334_b0">修正类 橡皮</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3335_b0">水彩笔 蜡笔</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3327_b0">记号笔 记号笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3326_b0">白板笔 白板笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3329_b0">唛克笔 唛克笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3328_b0">荧光笔 荧光笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3332_b0">毛笔 墨汁</a></li>
+                                            </ul>
+                                        </div>
+                                </div>
+                            </div>
+                    </li>
+                    <li>
+                            <h2><span class="menubg"></span><a href="">财务用品</a></h2>
+                            <div class="mod-subcate">
+                                <div class="mod-subcate-main">
+                                    <div class="listinfo">
+                                        <div class="listhead">
+                                            <span style="font-weight: bold;line-height: 25px;float:left;"><a style="color:#c40000;" href="https://www.wjyh.com/office_p3295_c0_b0">课件和规范</a></span>
+                                            <span style="line-height:25px;float:right;"><a href="https://www.wjyh.com/office_p3295_c0_b0">更多</a></span>
+                                        </div>
+                                        <ul>
+                                            <li><a href="https://www.wjyh.com/office_p3295_c3319_b0">中性笔 中性笔芯</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3340_b0">特种笔 特种笔墨水 其它笔</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3325_b0">铅笔 铅芯</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3334_b0">修正类 橡皮</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3335_b0">水彩笔 蜡笔</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3327_b0">记号笔 记号笔墨水</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3326_b0">白板笔 白板笔墨水</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3329_b0">唛克笔 唛克笔墨水</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3328_b0">荧光笔 荧光笔墨水</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3332_b0">毛笔 墨汁</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="listinfo">
+                                            <div class="listhead">
+                                                <span style="font-weight: bold;line-height: 25px;float:left;"><a style="color:#c40000;" href="https://www.wjyh.com/office_p3295_c0_b0">建议特额</a></span>
+                                                <span style="line-height:25px;float:right;"><a href="https://www.wjyh.com/office_p3295_c0_b0">更多</a></span>
+                                            </div>
+                                            <ul>
+                                                <li><a href="https://www.wjyh.com/office_p3295_c3319_b0">中性笔 中性笔芯</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3340_b0">特种笔 特种笔墨水 其它笔</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3325_b0">铅笔 铅芯</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3334_b0">修正类 橡皮</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3335_b0">水彩笔 蜡笔</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3327_b0">记号笔 记号笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3326_b0">白板笔 白板笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3329_b0">唛克笔 唛克笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3328_b0">荧光笔 荧光笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3332_b0">毛笔 墨汁</a></li>
+                                            </ul>
+                                    </div>
+                                    <div class="listinfo">
+                                            <div class="listhead">
+                                                <span style="font-weight: bold;line-height: 25px;float:left;"><a style="color:#c40000;" href="https://www.wjyh.com/office_p3295_c0_b0">二额问问</a></span>
+                                                <span style="line-height:25px;float:right;"><a href="https://www.wjyh.com/office_p3295_c0_b0">更多</a></span>
+                                            </div>
+                                            <ul>
+                                                <li><a href="https://www.wjyh.com/office_p3295_c3319_b0">中性笔 中性笔芯</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3340_b0">特种笔 特种笔墨水 其它笔</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3325_b0">铅笔 铅芯</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3334_b0">修正类 橡皮</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3335_b0">水彩笔 蜡笔</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3327_b0">记号笔 记号笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3326_b0">白板笔 白板笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3329_b0">唛克笔 唛克笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3328_b0">荧光笔 荧光笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3332_b0">毛笔 墨汁</a></li>
+                                            </ul>
+                                        </div>
+                                </div>
+                            </div>
+                    </li>
+                    <li>
+                            <h2><span class="menubg"></span><a href="">会议用品</a></h2>
+                            <div class="mod-subcate">
+                                <div class="mod-subcate-main">
+                                    <div class="listinfo">
+                                        <div class="listhead">
+                                            <span style="font-weight: bold;line-height: 25px;float:left;"><a style="color:#c40000;" href="https://www.wjyh.com/office_p3295_c0_b0">鱼火锅服</a></span>
+                                            <span style="line-height:25px;float:right;"><a href="https://www.wjyh.com/office_p3295_c0_b0">更多</a></span>
+                                        </div>
+                                        <ul>
+                                            <li><a href="https://www.wjyh.com/office_p3295_c3319_b0">中性笔 中性笔芯</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3340_b0">特种笔 特种笔墨水 其它笔</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3325_b0">铅笔 铅芯</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3334_b0">修正类 橡皮</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3335_b0">水彩笔 蜡笔</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3327_b0">记号笔 记号笔墨水</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3326_b0">白板笔 白板笔墨水</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3329_b0">唛克笔 唛克笔墨水</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3328_b0">荧光笔 荧光笔墨水</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3332_b0">毛笔 墨汁</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="listinfo">
+                                            <div class="listhead">
+                                                <span style="font-weight: bold;line-height: 25px;float:left;"><a style="color:#c40000;" href="https://www.wjyh.com/office_p3295_c0_b0">喂喂喂王</a></span>
+                                                <span style="line-height:25px;float:right;"><a href="https://www.wjyh.com/office_p3295_c0_b0">更多</a></span>
+                                            </div>
+                                            <ul>
+                                                <li><a href="https://www.wjyh.com/office_p3295_c3319_b0">中性笔 中性笔芯</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3340_b0">特种笔 特种笔墨水 其它笔</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3325_b0">铅笔 铅芯</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3334_b0">修正类 橡皮</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3335_b0">水彩笔 蜡笔</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3327_b0">记号笔 记号笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3326_b0">白板笔 白板笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3329_b0">唛克笔 唛克笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3328_b0">荧光笔 荧光笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3332_b0">毛笔 墨汁</a></li>
+                                            </ul>
+                                    </div>
+                                    <div class="listinfo">
+                                            <div class="listhead">
+                                                <span style="font-weight: bold;line-height: 25px;float:left;"><a style="color:#c40000;" href="https://www.wjyh.com/office_p3295_c0_b0">fwewew</a></span>
+                                                <span style="line-height:25px;float:right;"><a href="https://www.wjyh.com/office_p3295_c0_b0">更多</a></span>
+                                            </div>
+                                            <ul>
+                                                <li><a href="https://www.wjyh.com/office_p3295_c3319_b0">中性笔 中性笔芯</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3340_b0">特种笔 特种笔墨水 其它笔</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3325_b0">铅笔 铅芯</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3334_b0">修正类 橡皮</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3335_b0">水彩笔 蜡笔</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3327_b0">记号笔 记号笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3326_b0">白板笔 白板笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3329_b0">唛克笔 唛克笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3328_b0">荧光笔 荧光笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3332_b0">毛笔 墨汁</a></li>
+                                            </ul>
+                                        </div>
+                                </div>
+                            </div>
+                    </li>
+                    <li>
+                            <h2><span class="menubg"></span><a href="">工厂用品</a></h2>
+                            <div class="mod-subcate">
+                                <div class="mod-subcate-main">
+                                    <div class="listinfo">
+                                        <div class="listhead">
+                                            <span style="font-weight: bold;line-height: 25px;float:left;"><a style="color:#c40000;" href="https://www.wjyh.com/office_p3295_c0_b0">低功耗还</a></span>
+                                            <span style="line-height:25px;float:right;"><a href="https://www.wjyh.com/office_p3295_c0_b0">更多</a></span>
+                                        </div>
+                                        <ul>
+                                            <li><a href="https://www.wjyh.com/office_p3295_c3319_b0">中性笔 中性笔芯</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3340_b0">特种笔 特种笔墨水 其它笔</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3325_b0">铅笔 铅芯</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3334_b0">修正类 橡皮</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3335_b0">水彩笔 蜡笔</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3327_b0">记号笔 记号笔墨水</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3326_b0">白板笔 白板笔墨水</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3329_b0">唛克笔 唛克笔墨水</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3328_b0">荧光笔 荧光笔墨水</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3332_b0">毛笔 墨汁</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="listinfo">
+                                            <div class="listhead">
+                                                <span style="font-weight: bold;line-height: 25px;float:left;"><a style="color:#c40000;" href="https://www.wjyh.com/office_p3295_c0_b0">师傅威武</a></span>
+                                                <span style="line-height:25px;float:right;"><a href="https://www.wjyh.com/office_p3295_c0_b0">更多</a></span>
+                                            </div>
+                                            <ul>
+                                                <li><a href="https://www.wjyh.com/office_p3295_c3319_b0">中性笔 中性笔芯</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3340_b0">特种笔 特种笔墨水 其它笔</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3325_b0">铅笔 铅芯</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3334_b0">修正类 橡皮</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3335_b0">水彩笔 蜡笔</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3327_b0">记号笔 记号笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3326_b0">白板笔 白板笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3329_b0">唛克笔 唛克笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3328_b0">荧光笔 荧光笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3332_b0">毛笔 墨汁</a></li>
+                                            </ul>
+                                    </div>
+                                    <div class="listinfo">
+                                            <div class="listhead">
+                                                <span style="font-weight: bold;line-height: 25px;float:left;"><a style="color:#c40000;" href="https://www.wjyh.com/office_p3295_c0_b0">氛围完全</a></span>
+                                                <span style="line-height:25px;float:right;"><a href="https://www.wjyh.com/office_p3295_c0_b0">更多</a></span>
+                                            </div>
+                                            <ul>
+                                                <li><a href="https://www.wjyh.com/office_p3295_c3319_b0">中性笔 中性笔芯</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3340_b0">特种笔 特种笔墨水 其它笔</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3325_b0">铅笔 铅芯</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3334_b0">修正类 橡皮</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3335_b0">水彩笔 蜡笔</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3327_b0">记号笔 记号笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3326_b0">白板笔 白板笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3329_b0">唛克笔 唛克笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3328_b0">荧光笔 荧光笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3332_b0">毛笔 墨汁</a></li>
+                                            </ul>
+                                        </div>
+                                </div>
+                            </div>
+                    </li>
+                    <li>
+                            <h2><span class="menubg"></span><a href="">工程用品</a></h2>
+                            <div class="mod-subcate">
+                                <div class="mod-subcate-main">
+                                    <div class="listinfo">
+                                        <div class="listhead">
+                                            <span style="font-weight: bold;line-height: 25px;float:left;"><a style="color:#c40000;" href="https://www.wjyh.com/office_p3295_c0_b0">四方为王</a></span>
+                                            <span style="line-height:25px;float:right;"><a href="https://www.wjyh.com/office_p3295_c0_b0">更多</a></span>
+                                        </div>
+                                        <ul>
+                                            <li><a href="https://www.wjyh.com/office_p3295_c3319_b0">中性笔 中性笔芯</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3340_b0">特种笔 特种笔墨水 其它笔</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3325_b0">铅笔 铅芯</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3334_b0">修正类 橡皮</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3335_b0">水彩笔 蜡笔</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3327_b0">记号笔 记号笔墨水</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3326_b0">白板笔 白板笔墨水</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3329_b0">唛克笔 唛克笔墨水</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3328_b0">荧光笔 荧光笔墨水</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3332_b0">毛笔 墨汁</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="listinfo">
+                                            <div class="listhead">
+                                                <span style="font-weight: bold;line-height: 25px;float:left;"><a style="color:#c40000;" href="https://www.wjyh.com/office_p3295_c0_b0">电热若无</a></span>
+                                                <span style="line-height:25px;float:right;"><a href="https://www.wjyh.com/office_p3295_c0_b0">更多</a></span>
+                                            </div>
+                                            <ul>
+                                                <li><a href="https://www.wjyh.com/office_p3295_c3319_b0">中性笔 中性笔芯</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3340_b0">特种笔 特种笔墨水 其它笔</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3325_b0">铅笔 铅芯</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3334_b0">修正类 橡皮</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3335_b0">水彩笔 蜡笔</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3327_b0">记号笔 记号笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3326_b0">白板笔 白板笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3329_b0">唛克笔 唛克笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3328_b0">荧光笔 荧光笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3332_b0">毛笔 墨汁</a></li>
+                                            </ul>
+                                    </div>
+                                    <div class="listinfo">
+                                            <div class="listhead">
+                                                <span style="font-weight: bold;line-height: 25px;float:left;"><a style="color:#c40000;" href="https://www.wjyh.com/office_p3295_c0_b0">预计特就</a></span>
+                                                <span style="line-height:25px;float:right;"><a href="https://www.wjyh.com/office_p3295_c0_b0">更多</a></span>
+                                            </div>
+                                            <ul>
+                                                <li><a href="https://www.wjyh.com/office_p3295_c3319_b0">中性笔 中性笔芯</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3340_b0">特种笔 特种笔墨水 其它笔</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3325_b0">铅笔 铅芯</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3334_b0">修正类 橡皮</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3335_b0">水彩笔 蜡笔</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3327_b0">记号笔 记号笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3326_b0">白板笔 白板笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3329_b0">唛克笔 唛克笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3328_b0">荧光笔 荧光笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3332_b0">毛笔 墨汁</a></li>
+                                            </ul>
+                                        </div>
+                                </div>
+                            </div>
+                    </li>
+                    <li>
+                            <h2><span class="menubg"></span><a href="">定制用品</a></h2>
+                            <div class="mod-subcate">
+                                <div class="mod-subcate-main">
+                                    <div class="listinfo">
+                                        <div class="listhead">
+                                            <span style="font-weight: bold;line-height: 25px;float:left;"><a style="color:#c40000;" href="https://www.wjyh.com/office_p3295_c0_b0">书写用品</a></span>
+                                            <span style="line-height:25px;float:right;"><a href="https://www.wjyh.com/office_p3295_c0_b0">更多</a></span>
+                                        </div>
+                                        <ul>
+                                            <li><a href="https://www.wjyh.com/office_p3295_c3319_b0">中性笔 中性笔芯</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3340_b0">特种笔 特种笔墨水 其它笔</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3325_b0">铅笔 铅芯</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3334_b0">修正类 橡皮</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3335_b0">水彩笔 蜡笔</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3327_b0">记号笔 记号笔墨水</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3326_b0">白板笔 白板笔墨水</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3329_b0">唛克笔 唛克笔墨水</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3328_b0">荧光笔 荧光笔墨水</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3332_b0">毛笔 墨汁</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="listinfo">
+                                            <div class="listhead">
+                                                <span style="font-weight: bold;line-height: 25px;float:left;"><a style="color:#c40000;" href="https://www.wjyh.com/office_p3295_c0_b0">书写用纸</a></span>
+                                                <span style="line-height:25px;float:right;"><a href="https://www.wjyh.com/office_p3295_c0_b0">更多</a></span>
+                                            </div>
+                                            <ul>
+                                                <li><a href="https://www.wjyh.com/office_p3295_c3319_b0">中性笔 中性笔芯</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3340_b0">特种笔 特种笔墨水 其它笔</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3325_b0">铅笔 铅芯</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3334_b0">修正类 橡皮</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3335_b0">水彩笔 蜡笔</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3327_b0">记号笔 记号笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3326_b0">白板笔 白板笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3329_b0">唛克笔 唛克笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3328_b0">荧光笔 荧光笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3332_b0">毛笔 墨汁</a></li>
+                                            </ul>
+                                    </div>
+                                    <div class="listinfo">
+                                            <div class="listhead">
+                                                <span style="font-weight: bold;line-height: 25px;float:left;"><a style="color:#c40000;" href="https://www.wjyh.com/office_p3295_c0_b0">书写耗材</a></span>
+                                                <span style="line-height:25px;float:right;"><a href="https://www.wjyh.com/office_p3295_c0_b0">更多</a></span>
+                                            </div>
+                                            <ul>
+                                                <li><a href="https://www.wjyh.com/office_p3295_c3319_b0">中性笔 中性笔芯</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3340_b0">特种笔 特种笔墨水 其它笔</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3325_b0">铅笔 铅芯</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3334_b0">修正类 橡皮</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3335_b0">水彩笔 蜡笔</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3327_b0">记号笔 记号笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3326_b0">白板笔 白板笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3329_b0">唛克笔 唛克笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3328_b0">荧光笔 荧光笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3332_b0">毛笔 墨汁</a></li>
+                                            </ul>
+                                        </div>
+                                </div>
+                            </div>
+                    </li>
+                    <li>
+                            <h2><span class="menubg"></span><a href="">教学用品</a></h2>
+                            <div class="mod-subcate">
+                                <div class="mod-subcate-main">
+                                    <div class="listinfo">
+                                        <div class="listhead">
+                                            <span style="font-weight: bold;line-height: 25px;float:left;"><a style="color:#c40000;" href="https://www.wjyh.com/office_p3295_c0_b0">书写用品</a></span>
+                                            <span style="line-height:25px;float:right;"><a href="https://www.wjyh.com/office_p3295_c0_b0">更多</a></span>
+                                        </div>
+                                        <ul>
+                                            <li><a href="https://www.wjyh.com/office_p3295_c3319_b0">中性笔 中性笔芯</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3340_b0">特种笔 特种笔墨水 其它笔</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3325_b0">铅笔 铅芯</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3334_b0">修正类 橡皮</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3335_b0">水彩笔 蜡笔</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3327_b0">记号笔 记号笔墨水</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3326_b0">白板笔 白板笔墨水</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3329_b0">唛克笔 唛克笔墨水</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3328_b0">荧光笔 荧光笔墨水</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3332_b0">毛笔 墨汁</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="listinfo">
+                                            <div class="listhead">
+                                                <span style="font-weight: bold;line-height: 25px;float:left;"><a style="color:#c40000;" href="https://www.wjyh.com/office_p3295_c0_b0">书写用纸</a></span>
+                                                <span style="line-height:25px;float:right;"><a href="https://www.wjyh.com/office_p3295_c0_b0">更多</a></span>
+                                            </div>
+                                            <ul>
+                                                <li><a href="https://www.wjyh.com/office_p3295_c3319_b0">中性笔 中性笔芯</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3340_b0">特种笔 特种笔墨水 其它笔</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3325_b0">铅笔 铅芯</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3334_b0">修正类 橡皮</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3335_b0">水彩笔 蜡笔</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3327_b0">记号笔 记号笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3326_b0">白板笔 白板笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3329_b0">唛克笔 唛克笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3328_b0">荧光笔 荧光笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3332_b0">毛笔 墨汁</a></li>
+                                            </ul>
+                                    </div>
+                                    <div class="listinfo">
+                                            <div class="listhead">
+                                                <span style="font-weight: bold;line-height: 25px;float:left;"><a style="color:#c40000;" href="https://www.wjyh.com/office_p3295_c0_b0">书写耗材</a></span>
+                                                <span style="line-height:25px;float:right;"><a href="https://www.wjyh.com/office_p3295_c0_b0">更多</a></span>
+                                            </div>
+                                            <ul>
+                                                <li><a href="https://www.wjyh.com/office_p3295_c3319_b0">中性笔 中性笔芯</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3340_b0">特种笔 特种笔墨水 其它笔</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3325_b0">铅笔 铅芯</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3334_b0">修正类 橡皮</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3335_b0">水彩笔 蜡笔</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3327_b0">记号笔 记号笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3326_b0">白板笔 白板笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3329_b0">唛克笔 唛克笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3328_b0">荧光笔 荧光笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3332_b0">毛笔 墨汁</a></li>
+                                            </ul>
+                                        </div>
+                                </div>
+                            </div>
+                    </li>
+                    <li>
+                            <h2><span class="menubg"></span><a href="">美术用品</a></h2>
+                            <div class="mod-subcate">
+                                <div class="mod-subcate-main">
+                                    <div class="listinfo">
+                                        <div class="listhead">
+                                            <span style="font-weight: bold;line-height: 25px;float:left;"><a style="color:#c40000;" href="https://www.wjyh.com/office_p3295_c0_b0">书写用品</a></span>
+                                            <span style="line-height:25px;float:right;"><a href="https://www.wjyh.com/office_p3295_c0_b0">更多</a></span>
+                                        </div>
+                                        <ul>
+                                            <li><a href="https://www.wjyh.com/office_p3295_c3319_b0">中性笔 中性笔芯</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3340_b0">特种笔 特种笔墨水 其它笔</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3325_b0">铅笔 铅芯</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3334_b0">修正类 橡皮</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3335_b0">水彩笔 蜡笔</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3327_b0">记号笔 记号笔墨水</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3326_b0">白板笔 白板笔墨水</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3329_b0">唛克笔 唛克笔墨水</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3328_b0">荧光笔 荧光笔墨水</a></li>
+                                            <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3332_b0">毛笔 墨汁</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="listinfo">
+                                            <div class="listhead">
+                                                <span style="font-weight: bold;line-height: 25px;float:left;"><a style="color:#c40000;" href="https://www.wjyh.com/office_p3295_c0_b0">书写用纸</a></span>
+                                                <span style="line-height:25px;float:right;"><a href="https://www.wjyh.com/office_p3295_c0_b0">更多</a></span>
+                                            </div>
+                                            <ul>
+                                                <li><a href="https://www.wjyh.com/office_p3295_c3319_b0">中性笔 中性笔芯</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3340_b0">特种笔 特种笔墨水 其它笔</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3325_b0">铅笔 铅芯</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3334_b0">修正类 橡皮</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3335_b0">水彩笔 蜡笔</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3327_b0">记号笔 记号笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3326_b0">白板笔 白板笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3329_b0">唛克笔 唛克笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3328_b0">荧光笔 荧光笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3332_b0">毛笔 墨汁</a></li>
+                                            </ul>
+                                    </div>
+                                    <div class="listinfo">
+                                            <div class="listhead">
+                                                <span style="font-weight: bold;line-height: 25px;float:left;"><a style="color:#c40000;" href="https://www.wjyh.com/office_p3295_c0_b0">书写耗材</a></span>
+                                                <span style="line-height:25px;float:right;"><a href="https://www.wjyh.com/office_p3295_c0_b0">更多</a></span>
+                                            </div>
+                                            <ul>
+                                                <li><a href="https://www.wjyh.com/office_p3295_c3319_b0">中性笔 中性笔芯</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3340_b0">特种笔 特种笔墨水 其它笔</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3325_b0">铅笔 铅芯</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3334_b0">修正类 橡皮</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3335_b0">水彩笔 蜡笔</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3327_b0">记号笔 记号笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3326_b0">白板笔 白板笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3329_b0">唛克笔 唛克笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3328_b0">荧光笔 荧光笔墨水</a></li>
+                                                <li><a target="_blank" href="https://www.wjyh.com/office_p3295_c3332_b0">毛笔 墨汁</a></li>
+                                            </ul>
+                                        </div>
+                                </div>
+                            </div>
+                    </li>
+                </ul>
+                
+
+
+            </div>
+        </div>
+    </div>
+    <!-- banner -->
+    <div id="banner">
+        <ul class="DBbig">
+            <li style="background:rgb(116,0,203)"><a href=""><img src="imgs/5417D8435dc52771.jpg" alt="狂欢购物季"></a></li>
+            <li style="background:rgb(255,255,5)"><a href=""><img src="imgs/BE53DFB75d3558e7.jpg" alt="极益中心"></a></li>
+            <li style="background:rgb(73,7,229)"><a href=""><img src="imgs/D711305C5bee1f66.jpg" alt="购物大返利"></a></li>
+            <li style="background:rgb(75,191,252)"><a href=""><img src="imgs/FE3861A5c907a9d.jpg" alt="急速达"></a></li>
+        </ul>
+        <ul class="DBsml">
+           <li>
+               <div class="small-banner">
+                   <a title="得力软面抄" href="">
+                        <img alt="得力软面抄" src="imgs/D68A366C59a4e43d.jpg" alt="" width="190px" height="225px"> 
+                   </a>
+                   <b class="banner-sep"></b>
+                   <a title="得力平板计算器" href="">
+                    <img alt="得力平板计算器" src="imgs/2F5D606C59a4e458.jpg" alt="" width="190px" height="225px"> 
+                   </a>
+               </div>
+           </li>
+           <li>
+                <div class="small-banner">
+                    <a title="得力手摇碎纸机" href="">
+                            <img alt="得力手摇碎纸机" src="imgs/B90E7F7C59a4fc81.jpg" alt="" width="190px" height="225px"> 
+                    </a>
+                    <b class="banner-sep"></b>
+                    <a title="得力指纹考勤机" href="">
+                        <img alt="得力指纹考勤机" src="imgs/9802192759a4fc9e.jpg" alt="" width="190px" height="225px"> 
+                    </a>
+                </div>
+           </li>
+           <li>
+                <div class="small-banner">
+                    <a title="立顿红茶" href="">
+                            <img alt="立顿红茶" src="imgs/56E3A8BA59a4fbef.jpg" alt="" width="190px" height="225px"> 
+                    </a>
+                    <b class="banner-sep"></b>
+                    <a title="舒洁盒装面巾纸" href="">
+                        <img alt="舒洁盒装面巾纸" src="imgs/7A27875859a4fc0f.jpg" alt="" width="190px" height="225px"> 
+                    </a>
+                </div>
+           </li>
+           <li>
+                <div class="small-banner">
+                    <a title="马培德美工剪刀" href="">
+                            <img alt="马培德美工剪刀" src="imgs/342E8ED159a4fc38.jpg" alt="" width="190px" height="225px"> 
+                    </a>
+                    <b class="banner-sep"></b>
+                    <a title="科友mini订书机" href="">
+                        <img alt="科友mini订书机" src="imgs/AB27098959a4fc56.jpg" alt="" width="190px" height="225px"> 
+                    </a>
+                </div>
+           </li>
+        </ul>
+        <!-- banner-DBbig jquery代码 -->
+        <script src="libs/jquery.js"></script>
+        <script type="text/javascript">
+            var t = n = 0,
+            count;
+            $(document).ready(function() {
+                count = $(".DBbig li").length;
+                $(".DBbig li:not(:first-child)").hide();
+                $(".DBbig").click(function() {
+                    window.open($(".DBbig li:first-child").attr('href'), "_blank")
+                });
+                $(".menuWrap li").click(function() {
+                    var i = $(this).text() - 1; //获取Li元素内的值，即1，2，3，4
+                    n = i;
+                    if (i >= count) return;
+                    $(".DBbig").unbind().click(function() {
+                        window.open($(".DBbig li").eq(i).attr('href'), "_blank")
+                    }) 
+                    $(".DBbig li").filter(":visible").fadeOut(500).parent().children().eq(i).fadeIn(1000);
+                    $(this).toggleClass("on");
+                    $(this).siblings().removeAttr("class");
+                });
+                t = setInterval("showAuto()", 3000);
+                $(".DBbig").hover(function() {
+                    clearInterval(t)
+                },
+                function() {
+                    t = setInterval("showAuto()", 3000);
+                });
+            })
+          
+            function showAuto() {
+                n = n >= (count - 1) ? 0 : ++n;
+                $(".menuWrap li").eq(n).trigger('click');
+            }
+        </script>
+        <!-- banner-DBsmall jquery代码 -->
+         <script type="text/javascript">
+            var t = n = 0,
+            count;
+            $(document).ready(function() {
+                count = $(".DBsml li").length;
+                $(".DBsml li:not(:first-child)").hide();
+                $(".DBsml").click(function() {
+                    window.open($(".DBsml li:first-child").attr('href'), "_blank")
+                });
+                $(".menusml li").click(function() {
+                    var i = $(this).text() - 1; //获取Li元素内的值，即1，2，3，4
+                    n = i;
+                    if (i >= count) return;
+                    $(".DBsml").unbind().click(function() {
+                        window.open($(".DBsml li").eq(i).attr('href'), "_blank")
+                    }) 
+                    $(".DBsml li").filter(":visible").fadeOut(500).parent().children().eq(i).fadeIn(1000);
+                    $(this).toggleClass("on");
+                    $(this).siblings().removeAttr("class");
+                });
+                t = setInterval("showAuto()", 3000);
+                $(".DBsml").hover(function() {
+                    clearInterval(t)
+                },
+                function() {
+                    t = setInterval("showAuto()", 3000);
+                });
+            })
+          
+            function showAuto() {
+                n = n >= (count - 1) ? 0 : ++n;
+                $(".menusml li").eq(n).trigger('click');
+            }
+        </script> -->
+
+
+        <div class="menuWrap">
+            <ul>
+                <li class="on">1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+            </ul>
+        </div>
+        <div class="menusml">
+                <ul>
+                    <li class="on">1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                </ul>
+            </div>
+    </div>
+    <!-- gift pack -->
+    
+
+    <div id="gn-main">
+        <div class="gn-main-nei">
+            <div class="gift-pack">
+                <div class="gift-left" onclick="window.open('http://www.wjyh.com/mMXbuy.html')">
+                    <h1>特价礼包专区</h1>
+                    <img src="imgs/special_left1551856160.jpg">
+                </div>
+                <div class="gift-right">
+                    <div class="gift-tab">
+                        <div class="tab-list active" tab-id="0">10元包邮</div>
+                        <div class="tab-list" tab-id="1">15元包邮</div>
+                        <div class="tab-list" tab-id="2">20元包邮</div>
+                        <div class="tab-list" tab-id="3">30元包邮</div>
+                        <div style="position:relative;left:548px;top:-40px;width:50px;"><img src="imgs/one_chancev.png" alt=""></div>
+                    </div>
+                    <div class="gift-con">
+                        <div class="gift-con-list" tab-id="0">
+                            <div class="gift-tcl-list" onclick="window.open()">
+                                <div class="gift-tcl-list-tag">10元拿走</div>
+                                <img src="imgs/yvEdV216312475580.jpg!!_430X430_!!.jpg" alt="">
+                                <h3>10元包邮A</h3>
+                                <p>
+                                    ￥10.00/ 
+                                    <i>套</i>
+                                    <b>
+                                        ￥30.36/
+                                        <i>套</i>
+                                    </b>
+                                </p>
+                            </div>
+                            <div class="gift-tcl-list" onclick="window.open()">
+                                <div class="gift-tcl-list-tag">10元拿走</div>
+                                <img src="imgs/9Dfjvd16312572983.jpg!!_430X430_!!.jpg" alt="">
+                                <h3>10元包邮B</h3>
+                                <p>
+                                    ￥10.00/ 
+                                    <i>套</i>
+                                    <b>
+                                        ￥26.40/
+                                        <i>套</i>
+                                    </b>
+                                </p>
+                            </div>
+                            <div class="gift-tcl-list" onclick="window.open()">
+                                <div class="gift-tcl-list-tag">10元拿走</div>
+                                <img src="imgs/aqtitT16312583704.jpg!!_430X430_!!.jpg" alt="">
+                                <h3>10元包邮C</h3>
+                                <p>
+                                    ￥10.00/ 
+                                    <i>套</i>
+                                    <b>
+                                        ￥33.00/
+                                        <i>套</i>
+                                    </b>
+                                </p>
+                            </div>
+                            <!--  -->
+                            <script>
+                                $(function() {
+                                    var info=$('.gift-pack');
+                                    if(info.length>0){
+                                        $(".gift-con .gift-con-list").eq(0).addClass("active").siblings().removeClass("active");
+                                        $(".gift-tab .tab-list").eq(0).addClass("active").siblings().removeClass("active");
+                                    }
+                                    $("#j_bill").children().eq(1).addClass("saveFOn").siblings().removeClass("saveFOn");
+                                    $('.tab-list').each(function(k, v) {
+                                        $(v).attr('tab-id', k);
+                                    });
+                            
+                                    $('.gift-con-list').each(function(k, v) {
+                                        $(v).attr('tab-id', k);
+                                    });
+                            
+                                    $('.tab-list').click(function() {
+                                        var obj=$(this).prev()
+                                        if(obj.length>0){
+                                            obj.addClass("myafter").siblings().removeClass("myafter");
+                                        }
+                            
+                                        $(this).addClass('active');
+                            
+                                        var tabId = $(this).attr('tab-id');
+                                        $('.gift-con-list[tab-id=' + tabId + ']').addClass('active');
+                            
+                                        var tabs = $('tab-list').filter(function(i, e) {
+                                            return $(e).attr('tab-id') != tabId;
+                                        });
+                                        var tabContents = $('.gift-con-list').filter(function(i, e) {
+                                            return $(e).attr('tab-id') != tabId;
+                                        });
+                            
+                                        tabs.removeClass('active');
+                                        tabContents.removeClass('active');
+                                    });
+                                });
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ======================floor-top=========================== -->
+            <div class="floor-top">
+                <div class="floor-top-info">
+                    <div class="fl-new">
+                        <a href=""><img src="imgs/pur_left1544087707.jpg" alt=""></a>
+                    </div>
+                    <div class="center-new">
+                        <ul>
+                            <li class="m-b-4 m-r-4">
+                                <a href=""></a>
+                            </li>
+                            <li class="m-b-4"></li>
+                            <li class="m-b-4 m-r-4"></li>
+                            <li class="m-b-4"></li>
+                        </ul>
+                    </div>
+                    <div class="fr">
+                        <div class="notice">
+                            <dl>
+                                <dt>
+                                    <a class="info" style="background:rgb(102,102,102);color:rgb(255,255,255)" href="">公告</a>
+                                    <a class="info" style="background:none;color:rgb(102,102,102)" href="">咨询</a>
+                                    <a href="">更多...</a>
+                                </dt>
+                                <dd class="notice-now" style="display: block;">
+                                    <a href="">
+                                        <span>积分活动调整</span>
+                                        <p></p>
+                                    </a>
+                                </dd>
+                                <dd class="notice-now" style="display: block;">
+                                    <a href="">
+                                        <span>奖励金活动上线</span>
+                                        <p></p>
+                                    </a>
+                                </dd>
+                                <dd class="notice-now" style="display: block;">
+                                    <a href="">
+                                        <span>极速达有偿配送服务开通</span>
+                                        <p></p>
+                                    </a>
+                                </dd>
+                                <dd class="notice-now" style="display: block;">
+                                    <a href="">
+                                        <span>最新邮费政策</span>
+                                        <p></p>
+                                    </a>
+                                </dd>
+                                <dd class="notice-now" style="display: block;">
+                                    <a href="">
+                                        <span>超级会员周活动</span>
+                                        <p></p>
+                                    </a>
+                                </dd>
+                                <dd class="notice-now" style="display: block;">
+                                    <a href="">
+                                        <span>发票开具规则更新</span>
+                                        <p></p>
+                                    </a>
+                                </dd>
+                                <dd class="notice-now" style="display: block;">
+                                    <a href="">
+                                        <span>办公采购，文具1号比东东更便宜...</span>
+                                        <p></p>
+                                    </a>
+                                </dd>
+                                
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- =======================太阳花ad=================================== -->
+            <div class="ad">
+                <a href=""><img src="imgs/13966E785c08ef98.jpg" width="1190" height="90" alt="企业经营理念"></a>
+            </div>
+            <!-- louc1 -->
+            <div class="louc1">
+                <div class="w192">
+                    <div class="w192-img">
+                        <img src="imgs/D5D81CA9599e9cc5.jpg" alt="笔类用品" style="display:block;">
+                    </div>
+                    <div class="focus">
+                        <ul style="left:0px;width:384px;">
+                            <li><a><img src="imgs/59937B6457ecc5cf.jpg" alt="金万年" width="192" height="228" original="imgs/59937B6457ecc5cf.jpg"></a></li>
+                            <li><a><img src="imgs/79544D2457ecc653.jpg" alt="金万年" width="192" height="228" original="imgs/79544D2457ecc653.jpg"></a></li>
+                        </ul>
+                    </div>
+                    <div class="btn">
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="gn_floor_list">
+                        <ul class="floor-label-list">
+                            <li> <a href="https://www.wjyh.com/office_p3295_c3319_b0">中性笔</a> <a href="https://www.wjyh.com/office_p3295_c3322_b0">圆珠笔</a></li>
+                            <li> <a href="https://www.wjyh.com/office_p3295_c3328_b0">荧光笔</a> <a href="https://www.wjyh.com/office_p3295_c3326_b0">白板笔</a></li>
+                            <li> <a href="https://www.wjyh.com/office_p3295_c3327_b0">记号笔</a> <a href="https://www.wjyh.com/office_p3295_c3329_b0">POP笔</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="w400">
+                    <a href="http://www.wjyh.com/office_p3295_c0_b0" title="笔类用品" target="_blank"><img src="imgs/2D5185D759e07d9a.jpg" width="400" height="422" alt="笔类用品" original="imgs/2D5185D759e07d9a.jpg"></a>
+                </div>
+                <div class="col-w199">
+                    <a href="http://www.wjyh.com/3839.html" target="_blank"><img src="imgs/5C4B86645d301f9b.jpg" width="198" height="200" alt="金万年中性笔" title="0.5mm水笔 12支/盒">
+						<div class="index-a">
+						    <h2>金万年中性笔</h2>
+						    <p>0.5mm水笔 12支/盒</p>
+                        </div>
+                    </a>
+                    <a href="http://www.wjyh.com/15816.html" target="_blank"><img src="imgs/12321DDE5d302006.jpg" width="198" height="112" alt="百乐摩磨擦" title="0.5mm 可擦中性笔 12支/盒">
+						<div class="index-a">
+                            <h2>百乐摩磨擦</h2>
+                            <p>0.5mm 可擦中性笔 12支/盒</p>
+                        </div>
+					</a>
+                </div>
+                <div class="col-w199">
+                    <a href="http://www.wjyh.com/3839.html" target="_blank"><img src="imgs/5C4B86645d301f9b.jpg" width="198" height="200" alt="金万年中性笔" title="0.5mm水笔 12支/盒">
+						<div class="index-a">
+						    <h2>金万年中性笔</h2>
+						    <p>0.5mm水笔 12支/盒</p>
+                        </div>
+                    </a>
+                    <a href="http://www.wjyh.com/15816.html" target="_blank"><img src="imgs/12321DDE5d302006.jpg" width="198" height="112" alt="百乐摩磨擦" title="0.5mm 可擦中性笔 12支/盒">
+						<div class="index-a">
+                            <h2>百乐摩磨擦</h2>
+                            <p>0.5mm 可擦中性笔 12支/盒</p>
+                        </div>
+					</a>
+                </div>
+                <div class="col-w199">
+                    <a href="http://www.wjyh.com/3839.html" target="_blank"><img src="imgs/5C4B86645d301f9b.jpg" width="198" height="200" alt="金万年中性笔" title="0.5mm水笔 12支/盒">
+						<div class="index-a">
+						    <h2>金万年中性笔</h2>
+						    <p>0.5mm水笔 12支/盒</p>
+                        </div>
+                    </a>
+                    <a href="http://www.wjyh.com/15816.html" target="_blank"><img src="imgs/12321DDE5d302006.jpg" width="198" height="112" alt="百乐摩磨擦" title="0.5mm 可擦中性笔 12支/盒">
+						<div class="index-a">
+                            <h2>百乐摩磨擦</h2>
+                            <p>0.5mm 可擦中性笔 12支/盒</p>
+                        </div>
+					</a>
+                </div>
+            </div>
+<!-- ============================================================================================================== -->
+        </div>
+
+        <!-- ========================================================== -->
+        <div class="bottom-bg">
+        <div class="w1190">
+            <h1 class="new-h1">热门品牌专区</h1>
+            <div class="floor-bottom clearfix">
+                <div class="floor_center">
+                    <ul class="floor_cqk clearfix">
+                        <li><a href="http://www.wjyh.com/office_p0_c0_b110" title="" target="_blank"><img src="imgs/E27415CD57569153.jpg" width="90" height="45" border="0" title="金万年" alt="金万年" original="/imgserver1/extra/i3/advertarea/2016-06-07/E27415CD57569153.jpg" class="brand-logo"></a></li>
+                        <li><a href="http://www.wjyh.com/office_p0_c0_b128" title="" target="_blank"><img src="imgs/8F6D870357569174.jpg" width="90" height="45" border="0" title="北威" alt="北威" original="/imgserver1/extra/i3/advertarea/2016-06-07/8F6D870357569174.jpg" class="brand-logo"></a></li>
+                        <li><a href="http://www.wjyh.com/office_p0_c0_b174" title="" target="_blank"><img src="imgs/7BDAEF0557569ec5.jpg" width="90" height="45" border="0" title="惠普" alt="惠普" original="/imgserver1/extra/i3/advertarea/2016-06-07/7BDAEF0557569ec5.jpg" class="brand-logo"></a></li>
+                        <li><a href="http://www.wjyh.com/office_p0_c0_b111" title="" target="_blank"><img src="imgs/7A633D8A55b87004!!_90X45_!!.jpg" width="90" height="45" border="0" title="立信" alt="立信" original="/imgserver1/extra/i3/advertarea/2015-07-29/7A633D8A55b87004!!_90X45_!!.jpg" class="brand-logo"></a></li>
+                        <li><a href="http://www.wjyh.com/office_p0_c0_b116" title="" target="_blank"><img src="imgs/53B91D2A575692b6.jpg" width="90" height="45" border="0" title="中华牌铅笔" alt="中华牌铅笔" original="/imgserver1/extra/i3/advertarea/2016-06-07/53B91D2A575692b6.jpg" class="brand-logo"></a></li>
+                        <li><a href="http://www.wjyh.com/office_p0_c0_b178" title="" target="_blank"><img src="imgs/21B01DA75756933d.jpg" width="90" height="45" border="0" title="立顿" alt="立顿" original="/imgserver1/extra/i3/advertarea/2016-06-07/21B01DA75756933d.jpg" class="brand-logo"></a></li>
+                        <li><a href="http://www.wjyh.com/office_p0_c0_b112" title="" target="_blank"><img src="imgs/BD37669C575693b9.jpg" width="90" height="45" border="0" title="三木" alt="三木" original="/imgserver1/extra/i3/advertarea/2016-06-07/BD37669C575693b9.jpg" class="brand-logo"></a></li>
+                        <li><a href="http://www.wjyh.com/office_p0_c0_b143" title="" target="_blank"><img src="imgs/DEC1292757569b55.jpg" width="90" height="45" border="0" title="3M" alt="3M" original="/imgserver1/extra/i3/advertarea/2016-06-07/DEC1292757569b55.jpg" class="brand-logo"></a></li>
+                        <li><a href="http://www.wjyh.com/office_p0_c0_b172" title="" target="_blank"><img src="imgs/BDF1178E57569be3.jpg" width="90" height="45" border="0" title="佳能" alt="佳能" original="/imgserver1/extra/i3/advertarea/2016-06-07/BDF1178E57569be3.jpg" class="brand-logo"></a></li>
+                        <li><a href="http://www.wjyh.com/office_p0_c0_b155" title="" target="_blank"><img src="imgs/2B80AA8A575694ed.jpg" width="90" height="45" border="0" title="雄狮" alt="雄狮" original="/imgserver1/extra/i3/advertarea/2016-06-07/2B80AA8A575694ed.jpg" class="brand-logo"></a></li>
+                        <li><a href="http://www.wjyh.com/office_p0_c0_b121" title="" target="_blank"><img src="imgs/864812B657569509.jpg" width="90" height="45" border="0" title="益而高" alt="益而高" original="/imgserver1/extra/i3/advertarea/2016-06-07/864812B657569509.jpg" class="brand-logo"></a></li>
+                        <li><a href="http://www.wjyh.com/office_p0_c0_b177" title="" target="_blank"><img src="imgs/4C5571F57569e63.jpg" width="90" height="45" border="0" title="雀巢" alt="雀巢" original="/imgserver1/extra/i3/advertarea/2016-06-07/4C5571F57569e63.jpg" class="brand-logo"></a></li>
+                        <li><a href="http://www.wjyh.com/office_p0_c0_b129" title="" target="_blank"><img src="imgs/57251A6D57569552.jpg" width="90" height="45" border="0" title="上海复写" alt="上海复写" original="/imgserver1/extra/i3/advertarea/2016-06-07/57251A6D57569552.jpg" class="brand-logo"></a></li>
+                        <li><a href="http://www.wjyh.com/office_p0_c0_b123" title="" target="_blank"><img src="imgs/1F7C441155bf3e9d.jpg" width="90" height="45" border="0" title="工字牌" alt="工字牌" original="/imgserver1/extra/i3/advertarea/2015-08-03/1F7C441155bf3e9d.jpg" class="brand-logo"></a></li>
+                        <li><a href="http://www.wjyh.com/office_p0_c0_b182" title="" target="_blank"><img src="imgs/DDD2DF9F57569e7f.jpg" width="90" height="45" border="0" title="爱普生" alt="爱普生" original="/imgserver1/extra/i3/advertarea/2016-06-07/DDD2DF9F57569e7f.jpg" class="brand-logo"></a></li>
+                        <li><a href="http://www.wjyh.com/office_p0_c0_b120" title="" target="_blank"><img src="imgs/780438A6575695f9.jpg" width="90" height="45" border="0" title="万能通" alt="万能通" original="/imgserver1/extra/i3/advertarea/2016-06-07/780438A6575695f9.jpg" class="brand-logo"></a></li>
+                        <li><a href="http://www.wjyh.com/office_p0_c0_b154" title="" target="_blank"><img src="imgs/46EC8AA55b87116!!_90X45_!!.jpg" width="90" height="45" border="0" title="美邦祈富" alt="美邦祈富" original="/imgserver1/extra/i3/advertarea/2015-07-29/46EC8AA55b87116!!_90X45_!!.jpg" class="brand-logo"></a></li>
+                        <li><a href="http://www.wjyh.com/office_p0_c0_b195" title="" target="_blank"><img src="imgs/7B5A02DD5756964a.jpg" width="90" height="45" border="0" title="威猛先生" alt="威猛先生" original="/imgserver1/extra/i3/advertarea/2016-06-07/7B5A02DD5756964a.jpg" class="brand-logo"></a></li>
+                        <li><a href="http://www.wjyh.com/office_p0_c0_b142" title="" target="_blank"><img src="imgs/3B8C52A25756967e.jpg" width="90" height="45" border="0" title="名爵" alt="名爵" original="/imgserver1/extra/i3/advertarea/2016-06-07/3B8C52A25756967e.jpg" class="brand-logo"></a></li>
+                        <li><a href="http://www.wjyh.com/office_p0_c0_b125" title="" target="_blank"><img src="imgs/D8FC1811575697f8.jpg" width="90" height="45" border="0" title="渡边" alt="渡边" original="/imgserver1/extra/i3/advertarea/2016-06-07/D8FC1811575697f8.jpg" class="brand-logo"></a></li>
+                        <li><a href="http://www.wjyh.com/office_p0_c0_b175" title="" target="_blank"><img src="imgs/9BC10D9D575696a1.jpg" width="90" height="45" border="0" title="兄弟" alt="兄弟" original="/imgserver1/extra/i3/advertarea/2016-06-07/9BC10D9D575696a1.jpg" class="brand-logo"></a></li>
+                        <li><a href="http://www.wjyh.com/office_p0_c0_b115" title="" target="_blank"><img src="imgs/A721568455c010b0.jpg" width="90" height="45" border="0" title="卡西欧" alt="卡西欧" original="/imgserver1/extra/i3/advertarea/2015-08-04/A721568455c010b0.jpg" class="brand-logo"></a></li>
+                        <li><a href="http://www.wjyh.com/office_p0_c0_b122" title="" target="_blank"><img src="imgs/9A3ACB91575696db.jpg" width="90" height="45" border="0" title="港信" alt="港信" original="/imgserver1/extra/i3/advertarea/2016-06-07/9A3ACB91575696db.jpg" class="brand-logo"></a></li>
+                        <li><a href="http://www.wjyh.com/office_p0_c0_b189" title="" target="_blank"><img src="imgs/6C2E1DD057569e6f.jpg" width="90" height="45" border="0" title="蓝月亮" alt="蓝月亮" original="/imgserver1/extra/i3/advertarea/2016-06-07/6C2E1DD057569e6f.jpg" class="brand-logo"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ======================================================== -->
+<div id="bottom">
+    <div class="bottom-nei">
+        <div class="bottom-link">
+            <ul>
+                <li>合作伙伴</li>
+                <li>友情链接</li>
+                <li>热搜词</li>
+            </ul>
+            <div class="patener">
+                <img src="imgs/82.jpg" alt="微信" height="44px;">
+                <img src="imgs/110.jpg" alt="快钱" height="44px;">
+                <img src="imgs/111.jpg" alt="支付宝" height="44px;">
+            </div>
+        </div>
+        <div class="gn_underline"></div>
+        <div class="gn_footer_info">
+            <div class="l-area">
+                <div class="info_column">
+                    <h4 class="fht1">新手指南</h4> 
+                    <li><a href="/about_cat33_a48" title="免费注册" target="_blank">免费注册</a></li>
+                    <li><a href="/about_cat33_a65" title="导购演示" target="_blank">导购演示</a></li>
+                    <li><a href="/about_cat33_a478" title="清单采购" target="_blank">清单采购</a></li>
+                    <li><a href="/about_cat33_a476" title="电子协议" target="_blank">电子协议</a></li>
+                    <li><a href="/about_cat33_a64" title="修改密码及地址" target="_blank">修改密码及地址</a></li>
+                </div>
+                <div class="info_column">
+                    <h4 class="fht2">支付方式</h4>
+                    <li><a href="/about_cat34_a53" title="支付宝" target="_blank">支付宝</a></li>
+                    <li><a href="/about_cat34_a468" title="微信支付" target="_blank">微信支付</a></li>
+                    <li><a href="/about_cat34_a473" title="快钱支付" target="_blank">快钱支付</a></li>
+                    <li><a href="/about_cat34_a475" title="线下支付" target="_blank">线下支付</a></li>
+                    <li><a href="/about_cat34_a480" title="企业内申支付" target="_blank">企业内申支付</a></li>
+                </div>
+                <div class="info_column">
+                    <h4 class="fht3">配送方式</h4>
+                    <li><a href="/about_cat47_a481" title="极速达" target="_blank">极速达</a></li>
+                    <li><a href="/about_cat47_a54" title="配送范围" target="_blank">配送范围</a></li>
+                    <li><a href="/about_cat47_a469" title="配送费用" target="_blank">配送费用</a></li>
+                    <li><a href="/about_cat47_a55" title="配送查询" target="_blank">配送查询</a></li>
+                    <li><a href="/about_cat47_a470" title="注意事项" target="_blank">注意事项</a></li>
+                </div>
+                <div class="info_column">
+                    <h4 class="fht4">售后服务</h4>
+                    <li><a href="/about_cat48_a72" title="售后政策" target="_blank">售后政策</a></li>
+                    <li><a href="/about_cat48_a70" title="退换流程" target="_blank">退换流程</a></li>
+                    <li><a href="/about_cat48_a58" title="退款说明" target="_blank">退款说明</a></li>
+                    <li><a href="/about_cat48_a71" title="取消订单" target="_blank">取消订单</a></li>
+                    <li><a href="/about_cat48_a486" title="退换货地址" target="_blank">退换货地址</a></li>
+                </div>
+                <div class="info_column">
+                    <h4 class="fht5">会员中心</h4>
+                    <li><a href="/about_cat49_a49" title="会员成长及权益" target="_blank">会员成长及权益</a></li>
+                    <li><a href="/about_cat49_a483" title="奖励金与积分" target="_blank">奖励金与积分</a></li>
+                    <li><a href="/about_cat49_a485" title="发票开具" target="_blank">发票开具</a></li>
+                    <li><a href="/about_cat49_a482" title="超级会员周" target="_blank">超级会员周</a></li>
+                    <li><a href="/about_cat49_a50" title="密码找回安全设置" target="_blank">密码找回安全设置</a></li>
+                </div>
+                <div class="info_column">
+                    <h4 class="fht6">关于我们</h4>
+                    <li><a href="/about_cat50_a63" title="关于文具1号" target="_blank">关于文具1号</a></li>
+                    <li><a href="/about_cat50_a75" title="广告服务" target="_blank">广告服务</a></li>
+                    <li><a href="/about_cat50_a471" title="合作品牌" target="_blank">合作品牌</a></li>
+                    <li><a href="/about_cat50_a474" title="联系我们" target="_blank">联系我们</a></li>
+                    <li><a href="/about_cat50_a487" title="BD商务合作" target="_blank">BD商务合作</a></li>
+                </div>
+            </div>
+            <div class="r-area">
+                <img src="imgs/r-ewm.png" height="115px">
+            </div>
+        </div>
+
+        <div class="gn_footer_black">
+            <a href="/">首页</a>&nbsp;&nbsp;|&nbsp;&nbsp;            
+            <a href="/about_cat50_a63">关于文具1号</a>&nbsp;&nbsp;|&nbsp;&nbsp;            
+            <a target="_blank" href="http://m.kuaidi100.com">快递查询</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a target="_blank" href="/sitemap.html">网站地图</a>&nbsp;&nbsp;|&nbsp;&nbsp;            
+            <a href="/about_cat50_a474">联系我们</a>&nbsp;&nbsp;|&nbsp;&nbsp;            
+            <a href="http://zixun.wjyh.com">办公资讯</a>    
+        </div>
+
+
+        <div class="gn_bpart2 root1">
+                <div class="w1190 clearfix">
+                    <div class="all_foot1">
+                        Copyright © 2010-2020 上海易号网络科技有限公司<a href="https://www.wjyh.com">wjyh.com</a> 保留一切权利 沪ICP备13023872号  营业执照 <img src="imgs/police.png" border="0" style="position:relative;top: 4px;"><a rel="nofollow" target="_blank" href="https://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31010802001236" style="color:#999">沪公网安备 31010802001236号</a>
+                        <br>
+                        客服热线：4008-215-248 工作日时间：周一至周五 9:00-21:30 
+                        <span id="cnzz_stat_icon_1256871543"><a href="https://www.cnzz.com/stat/website.php?web_id=1256871543" target="_blank" title="站长统计"><img border="0" hspace="0" vspace="0" src="imgs/pic1.gif"></a></span>
+                    </div>
+                    <div class="all_foot2">
+                        <div class="footLogo">
+                           <a href=""><img src="imgs/cnnic.png" alt="可信网站"></a>
+                        </div>
+                        <div class="footLogo">
+                            <a target="_blank" href="">
+                                <img src="imgs/3.jpg">
+                            </a>
+                        </div>
+                        <div class="footLogo">
+                            <img src="imgs/6.jpg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
