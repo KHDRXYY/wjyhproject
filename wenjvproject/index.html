@@ -8,31 +8,17 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
     <style>
-        .special-gift-pack {width: 1190px; padding-top: 30px; font-size: 0; white-space: nowrap; box-sizing: border-box;font-family: 思源黑体;}
-        .special-gift-pack .spgp-left, .special-gift-pack .spgp-right {width: 595px; display: inline-block; vertical-align: top;}
-        .special-gift-pack .spgp-left, .special-gift-pack .spgpr-tcl-list {cursor:pointer;}
-        .special-gift-pack .spgp-left h1 {font-size: 16px; line-height: 38px; margin: 0; color: #333; font-weight: 400; padding-left: 15px; position: relative;}
-        .special-gift-pack .spgp-left h1:before {content: ''; display: block; position: absolute; top: 9px; left: 0; width: 5px; height: 18px; background: #f53318;}
-        .special-gift-pack .spgp-left img {width: 595px; height: 250px; border-top: 1px solid #f53318;}
-        .special-gift-pack .spgp-right .spgpr-tab {font-size: 0; height: 38px;}
+
         #gn-main .gn-main-nei .gift-pack .gift-right .gift-tab .tab-list {display: inline-block; font-size: 16px; vertical-align: middle; color: #333; font-weight: 400; width: 125px; position: relative; cursor: pointer; text-align: center; line-height: 38px; transition: all 0.15s ease-in-out;}
         #gn-main .gn-main-nei .gift-pack .gift-right .gift-tab .tab-list:after {content: ''; display: block; width: 1px; height: 16px; background: #ccc; position: absolute; right: 0; top: 11px;}
         #gn-main .gn-main-nei .gift-pack .gift-right .gift-tab .tab-list:last-child:after {display: none;}
         #gn-main .gn-main-nei .gift-pack .gift-right .gift-tab .tab-list.active {color: #fff; background: rgb(215,22,53);}
         #gn-main .gn-main-nei .gift-pack .gift-right .gift-tab .tab-list.active:after {display: none;}
         #gn-main .gn-main-nei .gift-pack .gift-right .gift-tab .tab-list.myafter:after {display: none;}
-        .special-gift-pack .spgp-right .spgpr-tab-con {width: 595px; height: 250px; border-top: 1px solid #f53318; border-right: 1px solid #ccc; border-bottom: 1px solid #ccc;}
-        .special-gift-pack .spgp-right .spgpr-tab-con .spgpr-tab-con-list {display: none; font-size: 0;}
-        .special-gift-pack .spgp-right .spgpr-tab-con .spgpr-tab-con-list.active {display: block;}
-        .special-gift-pack .spgp-right .spgpr-tab-con .spgpr-tab-con-list .spgpr-tcl-list {display: inline-block; width: 198px; height: 250px; position: relative; border-right: 1px solid #ccc;background: white;}
-        .special-gift-pack .spgp-right .spgpr-tab-con .spgpr-tab-con-list .spgpr-tcl-list .spgpr-tcl-list-tag {width: 67px; font-size: 12px; height: 25px; color: #fff; line-height: 25px; right: -1px; top: 4px; position: absolute; padding-left: 12px; background: transparent url(./views/mall/images/special-02.jpg) 0 0 no-repeat; background-size: 67px 25px; box-sizing: border-box; z-index: 2;display: none;}
-        .special-gift-pack .spgp-right .spgpr-tab-con .spgpr-tab-con-list .spgpr-tcl-list:last-child {border-right: none;}
-        .special-gift-pack .spgp-right .spgpr-tab-con .spgpr-tab-con-list .spgpr-tcl-list img {width: 140px; height: 140px; position: absolute; top: 25px; left: 30px;}
-        .special-gift-pack .spgp-right .spgpr-tab-con .spgpr-tab-con-list .spgpr-tcl-list h3 {margin: 0; font-weight: 400; font-size: 14px; line-height: 18px; color: #333; position: absolute; top: 175px; left: 30px; width: 140px; display: -webkit-box; white-space: normal; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden;}
-        .special-gift-pack .spgp-right .spgpr-tab-con .spgpr-tab-con-list .spgpr-tcl-list p {margin: 0; font-weight: 400; position: absolute; color: #d2220a; left: 30px; bottom: 22px; font-size: 14px;}
-        .special-gift-pack .spgp-right .spgpr-tab-con .spgpr-tab-con-list .spgpr-tcl-list p i {font-size: 12px; font-style: normal;}
-        .special-gift-pack .spgp-right .spgpr-tab-con .spgpr-tab-con-list .spgpr-tcl-list p b {display: inline-block; margin-left: 3px; position: relative; color: #999; font-weight: 400;}
-        .special-gift-pack .spgp-right .spgpr-tab-con .spgpr-tab-con-list .spgpr-tcl-list p b:after {content: ''; display: block; width: 100%; height: 1px; top: 48%; left: 0; position: absolute; background: #999;}
+        .l-fast-nav li.sxyp a.active{background:#e93052;}
+        .l-fast-nav li.wjcc a.active{background:#cc9368;}
+        .l-fast-nav li.zmwj a.active{background:#aebc65;}
+        .l-fast-nav li.bgyz a.active{background:#45c0a1;}
     </style>
 </head>
 <body>
@@ -996,47 +982,127 @@
                                 </p>
                             </div>
                             <!--  -->
-                            <script>
-                                $(function() {
-                                    var info=$('.gift-pack');
-                                    if(info.length>0){
-                                        $(".gift-con .gift-con-list").eq(0).addClass("active").siblings().removeClass("active");
-                                        $(".gift-tab .tab-list").eq(0).addClass("active").siblings().removeClass("active");
-                                    }
-                                    $("#j_bill").children().eq(1).addClass("saveFOn").siblings().removeClass("saveFOn");
-                                    $('.tab-list').each(function(k, v) {
-                                        $(v).attr('tab-id', k);
-                                    });
                             
-                                    $('.gift-con-list').each(function(k, v) {
-                                        $(v).attr('tab-id', k);
-                                    });
+                        </div>
+                        <div class="gift-con-list" tab-id="0">
+                            <div class="gift-tcl-list" onclick="window.open()">
+                                <div class="gift-tcl-list-tag">10元拿走</div>
+                                <img src="imgs/9KLLBp16728118490.jpg!!_430X430_!!.jpg" alt="">
+                                <h3>10元包邮A</h3>
+                                <p>
+                                    ￥10.00/ 
+                                    <i>套</i>
+                                    <b>
+                                        ￥30.36/
+                                        <i>套</i>
+                                    </b>
+                                </p>
+                            </div>
                             
-                                    $('.tab-list').click(function() {
-                                        var obj=$(this).prev()
-                                        if(obj.length>0){
-                                            obj.addClass("myafter").siblings().removeClass("myafter");
-                                        }
+                            <!--  -->
+                        </div>
+                        <div class="gift-con-list" tab-id="0">
+                            <div class="gift-tcl-list" onclick="window.open()">
+                                <div class="gift-tcl-list-tag">10元拿走</div>
+                                <img src="imgs/sJgLpe16312617500.jpg!!_430X430_!!.jpg" alt="">
+                                <h3>10元包邮A</h3>
+                                <p>
+                                    ￥10.00/ 
+                                    <i>套</i>
+                                    <b>
+                                        ￥30.36/
+                                        <i>套</i>
+                                    </b>
+                                </p>
+                            </div>
+                            <div class="gift-tcl-list" onclick="window.open()">
+                                <div class="gift-tcl-list-tag">10元拿走</div>
+                                <img src="imgs/PjxN4L16312939245.jpg!!_430X430_!!.jpg" alt="">
+                                <h3>10元包邮B</h3>
+                                <p>
+                                    ￥10.00/ 
+                                    <i>套</i>
+                                    <b>
+                                        ￥26.40/
+                                        <i>套</i>
+                                    </b>
+                                </p>
+                            </div>
+                            <div class="gift-tcl-list" onclick="window.open()">
+                                <div class="gift-tcl-list-tag">10元拿走</div>
+                                <img src="imgs/e8mJKM16310802338.jpg!!_430X430_!!.jpg" alt="">
+                                <h3>10元包邮C</h3>
+                                <p>
+                                    ￥10.00/ 
+                                    <i>套</i>
+                                    <b>
+                                        ￥33.00/
+                                        <i>套</i>
+                                    </b>
+                                </p>
+                            </div>
+                            <!--  -->
+                            <script>                                
+                            $(".gift-right").children(".gift-tab").children(".tab-list").click(function(){
+                                
+                                $(this).addClass("active").siblings().removeClass("active");
+                                $(".cont").children("p").eq($(this).index()).css("display","block").siblings().css("display","none");
                             
-                                        $(this).addClass('active');
-                            
-                                        var tabId = $(this).attr('tab-id');
-                                        $('.gift-con-list[tab-id=' + tabId + ']').addClass('active');
-                            
-                                        var tabs = $('tab-list').filter(function(i, e) {
-                                            return $(e).attr('tab-id') != tabId;
-                                        });
-                                        var tabContents = $('.gift-con-list').filter(function(i, e) {
-                                            return $(e).attr('tab-id') != tabId;
-                                        });
-                            
-                                        tabs.removeClass('active');
-                                        tabContents.removeClass('active');
-                                    });
-                                });
+                            });
                             </script>
                         </div>
+                        <div class="gift-con-list" tab-id="0">
+                            <div class="gift-tcl-list" onclick="window.open()">
+                                <div class="gift-tcl-list-tag">10元拿走</div>
+                                <img src="imgs/3tRKdP16312668816.jpg!!_430X430_!!.jpg" alt="">
+                                <h3>10元包邮A</h3>
+                                <p>
+                                    ￥10.00/ 
+                                    <i>套</i>
+                                    <b>
+                                        ￥30.36/
+                                        <i>套</i>
+                                    </b>
+                                </p>
+                            </div>
+                            <div class="gift-tcl-list" onclick="window.open()">
+                                <div class="gift-tcl-list-tag">10元拿走</div>
+                                <img src="imgs/VK3YhK16312651294.jpg!!_430X430_!!.jpg" alt="">
+                                <h3>10元包邮B</h3>
+                                <p>
+                                    ￥10.00/ 
+                                    <i>套</i>
+                                    <b>
+                                        ￥26.40/
+                                        <i>套</i>
+                                    </b>
+                                </p>
+                            </div>
+                            <div class="gift-tcl-list" onclick="window.open()">
+                                <div class="gift-tcl-list-tag">10元拿走</div>
+                                <img src="imgs/Lh2weW16312681147.jpg!!_430X430_!!.jpg" alt="">
+                                <h3>10元包邮C</h3>
+                                <p>
+                                    ￥10.00/ 
+                                    <i>套</i>
+                                    <b>
+                                        ￥33.00/
+                                        <i>套</i>
+                                    </b>
+                                </p>
+                            </div>
+                            <!--  -->
+                            
+                        </div>
                     </div>
+                    <script>                                
+                        $(".gift-right").children(".gift-tab").children(".tab-list").click(function(){
+                            
+                            $(this).addClass("active").siblings().removeClass("active");
+                            $(".gift-con").children(".gift-con-list").eq($(this).index()).css("display","block").siblings().css("display","none");
+                        
+                        });
+                    </script>
                 </div>
             </div>
             <!-- ======================floor-top=========================== -->
@@ -1048,11 +1114,11 @@
                     <div class="center-new">
                         <ul>
                             <li class="m-b-4 m-r-4">
-                                <a href=""></a>
+                                <a href=""><img src="imgs/pur_right11541144373.jpg" alt=""></a>
                             </li>
-                            <li class="m-b-4"></li>
-                            <li class="m-b-4 m-r-4"></li>
-                            <li class="m-b-4"></li>
+                            <li class="m-b-4"><a href=""><img src="imgs/pur_right21541144373.jpg" alt=""></a></li>
+                            <li class="m-b-4 m-r-4"><a href=""><img src="imgs/pur_right31541144373.jpg" alt=""></a></li>
+                            <li class="m-b-4"><a href=""><img src="imgs/pur_right41541144373.jpg" alt=""></a></li>
                         </ul>
                     </div>
                     <div class="fr">
@@ -1124,12 +1190,12 @@
                     <div class="focus">
                         <ul style="left:0px;width:384px;">
                             <li><a><img src="imgs/59937B6457ecc5cf.jpg" alt="金万年" width="192" height="228" original="imgs/59937B6457ecc5cf.jpg"></a></li>
-                            <li><a><img src="imgs/79544D2457ecc653.jpg" alt="金万年" width="192" height="228" original="imgs/79544D2457ecc653.jpg"></a></li>
+                            <!-- <li><a><img src="imgs/79544D2457ecc653.jpg" alt="金万年" width="192" height="228" original="imgs/79544D2457ecc653.jpg"></a></li> -->
                         </ul>
                     </div>
                     <div class="btn">
-                        <span></span>
-                        <span></span>
+                        <!-- <span></span>
+                        <span></span> -->
                     </div>
                     <div class="gn_floor_list">
                         <ul class="floor-label-list">
@@ -1141,6 +1207,216 @@
                 </div>
                 <div class="w400">
                     <a href="http://www.wjyh.com/office_p3295_c0_b0" title="笔类用品" target="_blank"><img src="imgs/2D5185D759e07d9a.jpg" width="400" height="422" alt="笔类用品" original="imgs/2D5185D759e07d9a.jpg"></a>
+                </div>
+                <div class="col-w199">
+                    <a href="http://www.wjyh.com/3839.html" target="_blank"><img src="imgs/5C4B86645d301f9b.jpg" width="198" height="200" alt="金万年中性笔" title="0.5mm水笔 12支/盒">
+						<div class="index-a">
+						    <h2>金万年中性笔</h2>
+						    <p>0.5mm水笔 12支/盒</p>
+                        </div>
+                    </a>
+                    <a href="http://www.wjyh.com/15816.html" target="_blank"><img src="imgs/12321DDE5d302006.jpg" width="198" height="112" alt="百乐摩磨擦" title="0.5mm 可擦中性笔 12支/盒">
+						<div class="index-a">
+                            <h2>百乐摩磨擦</h2>
+                            <p>0.5mm 可擦中性笔 12支/盒</p>
+                        </div>
+					</a>
+                </div>
+                <div class="col-w199">
+                    <a href="http://www.wjyh.com/3839.html" target="_blank"><img src="imgs/5C4B86645d301f9b.jpg" width="198" height="200" alt="金万年中性笔" title="0.5mm水笔 12支/盒">
+						<div class="index-a">
+						    <h2>金万年中性笔</h2>
+						    <p>0.5mm水笔 12支/盒</p>
+                        </div>
+                    </a>
+                    <a href="http://www.wjyh.com/15816.html" target="_blank"><img src="imgs/12321DDE5d302006.jpg" width="198" height="112" alt="百乐摩磨擦" title="0.5mm 可擦中性笔 12支/盒">
+						<div class="index-a">
+                            <h2>百乐摩磨擦</h2>
+                            <p>0.5mm 可擦中性笔 12支/盒</p>
+                        </div>
+					</a>
+                </div>
+                <div class="col-w199">
+                    <a href="http://www.wjyh.com/3839.html" target="_blank"><img src="imgs/5C4B86645d301f9b.jpg" width="198" height="200" alt="金万年中性笔" title="0.5mm水笔 12支/盒">
+						<div class="index-a">
+						    <h2>金万年中性笔</h2>
+						    <p>0.5mm水笔 12支/盒</p>
+                        </div>
+                    </a>
+                    <a href="http://www.wjyh.com/15816.html" target="_blank"><img src="imgs/12321DDE5d302006.jpg" width="198" height="112" alt="百乐摩磨擦" title="0.5mm 可擦中性笔 12支/盒">
+						<div class="index-a">
+                            <h2>百乐摩磨擦</h2>
+                            <p>0.5mm 可擦中性笔 12支/盒</p>
+                        </div>
+					</a>
+                </div>
+            </div>
+            <!-- louc2 -->
+            <div class="louc1">
+                <div class="w192">
+                    <div class="w192-img">
+                        <img src="imgs/80E12C98599e9953.jpg" alt="笔类用品" style="display:block;">
+                    </div>
+                    <div class="focus">
+                        <ul style="left:0px;width:384px;">
+                            <li><a><img src="imgs/71288CE4578f56d5.jpg" alt="金万年" width="192" height="228" original="imgs/59937B6457ecc5cf.jpg"></a></li>
+                            <!-- <li><a><img src="imgs/79544D2457ecc653.jpg" alt="金万年" width="192" height="228" original="imgs/79544D2457ecc653.jpg"></a></li> -->
+                        </ul>
+                    </div>
+                    <div class="btn">
+                        <!-- <span></span>
+                        <span></span> -->
+                    </div>
+                    <div class="gn_floor_list">
+                        <ul class="floor-label-list">
+                            <li> <a href="https://www.wjyh.com/office_p3295_c3319_b0">swf笔</a> <a href="https://www.wjyh.com/office_p3295_c3322_b0">圆珠笔</a></li>
+                            <li> <a href="https://www.wjyh.com/office_p3295_c3328_b0">分为笔</a> <a href="https://www.wjyh.com/office_p3295_c3326_b0">白板笔</a></li>
+                            <li> <a href="https://www.wjyh.com/office_p3295_c3327_b0">钢铁笔</a> <a href="https://www.wjyh.com/office_p3295_c3329_b0">POP笔</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="w400">
+                    <a href="http://www.wjyh.com/office_p3295_c0_b0" title="笔类用品" target="_blank"><img src="imgs/12C1A2AD59e07ea2!!_400X422_!!.jpg" width="400" height="422" alt="笔类用品" original="imgs/2D5185D759e07d9a.jpg"></a>
+                </div>
+                <div class="col-w199">
+                    <a href="http://www.wjyh.com/3839.html" target="_blank"><img src="imgs/5C4B86645d301f9b.jpg" width="198" height="200" alt="金万年中性笔" title="0.5mm水笔 12支/盒">
+						<div class="index-a">
+						    <h2>金万年中性笔</h2>
+						    <p>0.5mm水笔 12支/盒</p>
+                        </div>
+                    </a>
+                    <a href="http://www.wjyh.com/15816.html" target="_blank"><img src="imgs/12321DDE5d302006.jpg" width="198" height="112" alt="百乐摩磨擦" title="0.5mm 可擦中性笔 12支/盒">
+						<div class="index-a">
+                            <h2>百乐摩磨擦</h2>
+                            <p>0.5mm 可擦中性笔 12支/盒</p>
+                        </div>
+					</a>
+                </div>
+                <div class="col-w199">
+                    <a href="http://www.wjyh.com/3839.html" target="_blank"><img src="imgs/5C4B86645d301f9b.jpg" width="198" height="200" alt="金万年中性笔" title="0.5mm水笔 12支/盒">
+						<div class="index-a">
+						    <h2>金万年中性笔</h2>
+						    <p>0.5mm水笔 12支/盒</p>
+                        </div>
+                    </a>
+                    <a href="http://www.wjyh.com/15816.html" target="_blank"><img src="imgs/12321DDE5d302006.jpg" width="198" height="112" alt="百乐摩磨擦" title="0.5mm 可擦中性笔 12支/盒">
+						<div class="index-a">
+                            <h2>百乐摩磨擦</h2>
+                            <p>0.5mm 可擦中性笔 12支/盒</p>
+                        </div>
+					</a>
+                </div>
+                <div class="col-w199">
+                    <a href="http://www.wjyh.com/3839.html" target="_blank"><img src="imgs/5C4B86645d301f9b.jpg" width="198" height="200" alt="金万年中性笔" title="0.5mm水笔 12支/盒">
+						<div class="index-a">
+						    <h2>金万年中性笔</h2>
+						    <p>0.5mm水笔 12支/盒</p>
+                        </div>
+                    </a>
+                    <a href="http://www.wjyh.com/15816.html" target="_blank"><img src="imgs/12321DDE5d302006.jpg" width="198" height="112" alt="百乐摩磨擦" title="0.5mm 可擦中性笔 12支/盒">
+						<div class="index-a">
+                            <h2>百乐摩磨擦</h2>
+                            <p>0.5mm 可擦中性笔 12支/盒</p>
+                        </div>
+					</a>
+                </div>
+            </div>
+            <!-- louc3 -->
+            <div class="louc1">
+                <div class="w192">
+                    <div class="w192-img">
+                        <img src="imgs/F5235859599e9960.jpg" alt="笔类用品" style="display:block;">
+                    </div>
+                    <div class="focus">
+                        <ul style="left:0px;width:384px;">
+                            <li><a><img src="imgs/E02243E5578f5714.jpg" alt="金万年" width="192" height="228" original="imgs/59937B6457ecc5cf.jpg"></a></li>
+                            <!-- <li><a><img src="imgs/79544D2457ecc653.jpg" alt="金万年" width="192" height="228" original="imgs/79544D2457ecc653.jpg"></a></li> -->
+                        </ul>
+                    </div>
+                    <div class="btn">
+                        <!-- <span></span>
+                        <span></span> -->
+                    </div>
+                    <div class="gn_floor_list">
+                        <ul class="floor-label-list">
+                            <li> <a href="https://www.wjyh.com/office_p3295_c3319_b0">swf笔</a> <a href="https://www.wjyh.com/office_p3295_c3322_b0">圆珠笔</a></li>
+                            <li> <a href="https://www.wjyh.com/office_p3295_c3328_b0">分s笔</a> <a href="https://www.wjyh.com/office_p3295_c3326_b0">白板笔</a></li>
+                            <li> <a href="https://www.wjyh.com/office_p3295_c3327_b0">aa铁笔</a> <a href="https://www.wjyh.com/office_p3295_c3329_b0">POP笔</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="w400">
+                    <a href="http://www.wjyh.com/office_p3295_c0_b0" title="笔类用品" target="_blank"><img src="imgs/8AB63DE6597991f5.jpg" width="400" height="422" alt="笔类用品" original="imgs/2D5185D759e07d9a.jpg"></a>
+                </div>
+                <div class="col-w199">
+                    <a href="http://www.wjyh.com/3839.html" target="_blank"><img src="imgs/5C4B86645d301f9b.jpg" width="198" height="200" alt="金万年中性笔" title="0.5mm水笔 12支/盒">
+						<div class="index-a">
+						    <h2>金万年中性笔</h2>
+						    <p>0.5mm水笔 12支/盒</p>
+                        </div>
+                    </a>
+                    <a href="http://www.wjyh.com/15816.html" target="_blank"><img src="imgs/12321DDE5d302006.jpg" width="198" height="112" alt="百乐摩磨擦" title="0.5mm 可擦中性笔 12支/盒">
+						<div class="index-a">
+                            <h2>百乐摩磨擦</h2>
+                            <p>0.5mm 可擦中性笔 12支/盒</p>
+                        </div>
+					</a>
+                </div>
+                <div class="col-w199">
+                    <a href="http://www.wjyh.com/3839.html" target="_blank"><img src="imgs/5C4B86645d301f9b.jpg" width="198" height="200" alt="金万年中性笔" title="0.5mm水笔 12支/盒">
+						<div class="index-a">
+						    <h2>金万年中性笔</h2>
+						    <p>0.5mm水笔 12支/盒</p>
+                        </div>
+                    </a>
+                    <a href="http://www.wjyh.com/15816.html" target="_blank"><img src="imgs/12321DDE5d302006.jpg" width="198" height="112" alt="百乐摩磨擦" title="0.5mm 可擦中性笔 12支/盒">
+						<div class="index-a">
+                            <h2>百乐摩磨擦</h2>
+                            <p>0.5mm 可擦中性笔 12支/盒</p>
+                        </div>
+					</a>
+                </div>
+                <div class="col-w199">
+                    <a href="http://www.wjyh.com/3839.html" target="_blank"><img src="imgs/5C4B86645d301f9b.jpg" width="198" height="200" alt="金万年中性笔" title="0.5mm水笔 12支/盒">
+						<div class="index-a">
+						    <h2>金万年中性笔</h2>
+						    <p>0.5mm水笔 12支/盒</p>
+                        </div>
+                    </a>
+                    <a href="http://www.wjyh.com/15816.html" target="_blank"><img src="imgs/12321DDE5d302006.jpg" width="198" height="112" alt="百乐摩磨擦" title="0.5mm 可擦中性笔 12支/盒">
+						<div class="index-a">
+                            <h2>百乐摩磨擦</h2>
+                            <p>0.5mm 可擦中性笔 12支/盒</p>
+                        </div>
+					</a>
+                </div>
+            </div>
+            <!-- louc4 -->
+            <div class="louc1">
+                <div class="w192">
+                    <div class="w192-img">
+                        <img src="imgs/E00BC027599e9968.jpg" alt="笔类用品" style="display:block;">
+                    </div>
+                    <div class="focus">
+                        <ul style="left:0px;width:384px;">
+                            <li><a><img src="imgs/C5A9802C5a129b36!!_192X228_!!.jpg" alt="金万年" width="192" height="228" original="imgs/59937B6457ecc5cf.jpg"></a></li>
+                            <!-- <li><a><img src="imgs/79544D2457ecc653.jpg" alt="金万年" width="192" height="228" original="imgs/79544D2457ecc653.jpg"></a></li> -->
+                        </ul>
+                    </div>
+                    <div class="btn">
+                        <!-- <span></span>
+                        <span></span> -->
+                    </div>
+                    <div class="gn_floor_list">
+                        <ul class="floor-label-list">
+                            <li> <a href="https://www.wjyh.com/office_p3295_c3319_b0">swf笔</a> <a href="https://www.wjyh.com/office_p3295_c3322_b0">圆珠笔</a></li>
+                            <li> <a href="https://www.wjyh.com/office_p3295_c3328_b0">uytre</a> <a href="https://www.wjyh.com/office_p3295_c3326_b0">白板笔</a></li>
+                            <li> <a href="https://www.wjyh.com/office_p3295_c3327_b0">aa铁笔</a> <a href="https://www.wjyh.com/office_p3295_c3329_b0">POP笔</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="w400">
+                    <a href="http://www.wjyh.com/office_p3295_c0_b0" title="笔类用品" target="_blank"><img src="imgs/7ECAF12659e07ec1!!_400X422_!!.jpg" width="400" height="422" alt="笔类用品" original="imgs/2D5185D759e07d9a.jpg"></a>
                 </div>
                 <div class="col-w199">
                     <a href="http://www.wjyh.com/3839.html" target="_blank"><img src="imgs/5C4B86645d301f9b.jpg" width="198" height="200" alt="金万年中性笔" title="0.5mm水笔 12支/盒">
@@ -1335,16 +1611,74 @@
     </div>
 </div>
 
+<!-- louceng -->
+<div class="l-fast-nav" style="position: fixed; left: 50%; margin-left: -635px; top: 50%; margin-top: -170px;">
+    <a class="dh" href="javascript:;">导航</a>
+    <ul class="cel">                        
+        <li class="sxyp curr"><a href="javascript:;">书写用品</a></li>
+        <li class="wjcc"><a href="javascript:;">文件存储</a></li>
+        <li class="zmwj"><a href="javascript:;">桌面文具</a></li>
+        <li class="bgyz"><a href="javascript:;">办公耗材</a></li>
+    </ul>
+    <a class="go-top" href="javascript:;">顶部</a>
+</div>
+<!-- louceng效果 -->
+<script>
+    // $(".cel").children("li").click(function(){
+    //     //当前点击的li 的下标
+        
+    //     var i = $(this).index();
+    //     console.log($(this));
+    //     console.log(i)
+    //     $(this).children("a").addClass("active").parent().siblings().children("a").removeClass("active");
+    //     //设置li 和 box的对应关系，点击li1时，对应box1;
+    //     var now = $(".louc1").eq(i); 
+    //     console.log(now);
+    //     //设置当前box的scroolTop的值
+    //     var t  = now.offset().top;
+    //     console.log(t);
+    //     // $("html").animate({
+    //     //     scrollTop:t
+    //     // });
 
 
+//             $("document").scroll(function() {
+                
+//                 if($(document).scrollTop() = 1537){
+
+// 　　　　         $(".sxyp").children("a").addClass("active").parent().siblings().children("a").removeClass("active");
+
+// 　　            }else if($(document).scrollTop() = 1989){
+//     　　　　         $(".wjcc").children("a").addClass("active").parent().siblings().children("a").removeClass("active");
+//             }
+            // });
+    
+        // });
 
 
+   
+  </script>
+  <!-- louceng模块化 -->
+  
+</body>
+<script src="ajax.js"></script>
+<script src="cookie.js"></script>
+<script src="libs/require.js"></script>
 
+<script>
+    require(["libs/jquery","module/tab","module/tost"],function(_,tab,toast){
+        var t1 = new tab({
+            // ali:$(".box").find("li"),
+            // ap:$(".box").find("p")
+            ali:$(".cel").find("li"),
+            ap:$(".louc1")
+        });
 
-
-
-
-
+        new toast({
+            ap:t1.t
+        })
+    })
+ </script>
 
 
 </body>

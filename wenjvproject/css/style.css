@@ -116,8 +116,8 @@
 #gn-main .gn-main-nei .gift-pack .gift-right .gift-tab .tab-list{position:relative;display:inline-block;font-size:16px;vertical-align:middle;font-weight:400;width:125px;cursor: pointer;text-align:center;line-height:38px;transition: all 0.15s ease-in-out;}
 #gn-main .gn-main-nei .gift-pack .gift-right .gift-tab .active{color:#fff;background:rgb(215,22,53);}
 #gn-main .gn-main-nei .gift-pack .gift-right .gift-tab .tab-list::after{content:'';display:block;width:1px;height:16px;background:#ccc;position:absolute;right:0;top:11px;}
-#gn-main .gn-main-nei .gift-pack .gift-right .gift-con{width:595px;height:250px;border-top:1px solid #f53318;border-right:1px solid #ccc;border-bottom:1px solid #ccc;}
-#gn-main .gn-main-nei .gift-pack .gift-right .gift-con .gift-con-list{}
+#gn-main .gn-main-nei .gift-pack .gift-right .gift-con{position:relative;width:595px;height:250px;border-top:1px solid #f53318;border-right:1px solid #ccc;border-bottom:1px solid #ccc;}
+#gn-main .gn-main-nei .gift-pack .gift-right .gift-con .gift-con-list{position:absolute;top:0;left:0;}
 #gn-main .gn-main-nei .gift-pack .gift-right .gift-con .gift-con-list .gift-tcl-list:last-child {border-right: none;}
 #gn-main .gn-main-nei .gift-pack .gift-right .gift-con .gift-con-list .gift-tcl-list{display:inline-block;width:198px;height:250px;position:relative;border-right:1px solid #ccc;background:white;cursor:pointer;}
 #gn-main .gn-main-nei .gift-pack .gift-right .gift-con .gift-con-list .gift-tcl-list .gift-tcl-list-tag{width: 67px; font-size: 12px; height: 25px; color: #fff; line-height: 25px; right: -1px; top: 4px; position: absolute; padding-left: 12px; background: transparent url(./views/mall/images/special-02.jpg) 0 0 no-repeat; background-size: 67px 25px; box-sizing: border-box; z-index: 2;display: none;}
@@ -221,3 +221,15 @@
 #bottom .w1190 .all_foot2{margin-bottom:10px;margin-top:15px;height:40px;display:flex;justify-content:center;}
 #bottom .w1190 .footLogo{height:36px;width:102px;padding:0 1px;float:left;}
 #bottom .w1190 .footLogo img{width:102px;height:36px;}
+
+/* louceng */
+.l-fast-nav{width:36px;text-align:center;z-index:9999;}
+.l-fast-nav a.dh{background:#ff4444;color:#fff;line-height:36px;margin-bottom:2px;display:block;width:36px;height:36px;}
+.l-fast-nav ul li{width:36px;margin-bottom:2px;}
+.l-fast-nav ul li a{padding:3px;display:block;line-height:15px;height:100%;color:#fff;background:#666;}
+/* .l-fast-nav li.sxyp a{background:#e93052;} */
+.l-fast-nav a.go-top{height:21px;padding-top:15px;color:#fff;text-align:center;background:url(../imgs/go-top.png) no-repeat center 5px #999;display:block;width:36px;}
+.l-fast-nav 
+.l-fast-nav 
+.l-fast-nav 
+.l-fast-nav 
