@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .header{width:100%;height:80px;}
+        .header-nei{width:990px;margin:0 auto;}
+        .header-nei .logo{margin-left:50px;padding-top:12px;}
+        .header-nei .logo span{position:relative;font-size:20px;font-family:"微软雅黑";left:10px;top:-15px;}
+        .main{width:100%;height:579px;background:#e50048;}
+        .main .main-nei{width:1100px;padding:36px 0;margin:0 auto;}
+        .main .main-nei .bgt{width:630px;height:390px;float:left;}
+        .main .main-nei .bgt img{width:630px;height:390px;margin:10px 30px 0 0;}
+        .main .main-nei .page{position:relative;width:365px;height:477px;padding:0 47px 0 37px;padding-top:38px;margin-top:10px;background:#fff;float:left;}
+        .main .main-nei .page .notice-msg{width:369px;height:30px;padding-left:70px;background:url(imgs/ld-r.png) no-repeat 40px center #ffe6e6;position:absolute;line-height:30px;top:0;font-size:13px;color:#2a343f;left:-440px;display:none;}
+        .main .main-nei .page p{color:#E9242B;font-size:20px;font-weight:bold;font-family:"微软雅黑";}
+        .main .main-nei .page .phone{background:url(imgs/mobile-logo.png) no-repeat 15px center;}
+        .main .main-nei .page .userpass{background:url(imgs/pwd-logo.png) no-repeat 15px center;}
+        .main .main-nei .page .from-row{border:1px solid #a3a3a3;height:50px;border-radius:6px;padding-left:50px;margin-top:20px;position:relative;}
+        .main .main-nei .page .from-row span{position:absolute;right:-36px;top:10px;display:none;}
+        /* .main .main-nei .page .from-row i{position:absolute;width:29px;height:29px;background:url(imgs/red-right-logo.png) no-repeat center;right:-36px;top:10px;display:none;} */
+        .main .main-nei .page .from-row input{line-height:48px;border:0;width:260px;font-size:14px;height:48px;}
+        input:focus { outline: none; }
+        .main .main-nei .page .line-row{margin-top:10px;font-size:13px;overflow:hidden;}
+        .main .main-nei .page .line-row a{color:#000;cursor: pointer;text-decoration:none;float:left;}
+        .main .main-nei .page .line-row a.mzhh{float:right;color:#333;}
+        .main .main-nei .page .line-row a.mzhh span{color:#3399ff;}
+        .btn{width:100%;height:49px;line-height:49px;color:#fff;background:#c40001;font-size:20px;font-weight:400;border:none;margin:15px 0;outline:none;}
+        .fl{margin-top:10px;font-size:13px;}
+        .fl input{position:relative;top:2px;}
+        .fl label{color:#666;margin-left:5px;cursor: pointer;}
+        .fl a{color:#ff6600;text-decoration:none;}
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="header-nei">
+            <div class="logo">
+                <img src="imgs/deng_logo.jpg" alt="">
+                <span>欢迎注册</span>
+            </div>           
+        </div>
+    </div>
+    <div class="main">
+        <div class="main-nei">
+            <div class="bgt">
+                <a href="">
+                    <img src="imgs/login1561948970.jpg" alt="">
+                </a>
+            </div>
+            <!-- page页 -->
+            <div class="page">
+                <div class="notice-msg"></div>
+                <p>账号密码登录</p>
+                <form class="yan" action="">
+                    <div class="from-row phone">
+                        <input type="text" id="user" placeholder="请输入手机号码" required>
+                        <span></span>
+                    </div>
+                    <div class="from-row userpass">
+                        <input type="password" id="pass" placeholder="请输入密码">
+                        <span></span>
+                    </div>
+                    <div class="from-row userpass2">
+                        <input type="password" id="twopass" placeholder="请再次输入密码">
+                        <span></span>
+                    </div>
+                </form>
+                <div class="fl">
+                    <input type="checkbox" id="checkbox3" checked="checked">
+                    <label for="checkbox3">同意</label>
+                    <a href="/mMRegister-agreement.html" target="_blank">《文具1号服务协议》</a>
+                </div>
+                <button class="btn login" type="submit" id="regbtn" tabindex="5">注册</button>
+                <div class="line-row">
+                    <a href="./mMResetPassword.html" target="_blank">第三方登录</a>
+                    <a class="mzhh" href="login.html">已有账号？<span>马上登录</span></a>
+                </div>
+                
+
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    class regist{
+        constructor(){
+            this.user = document.getElementById("user");
+            this.pass = document.getElementById("pass");
+            this.btn = document.getElementById("regbtn");
+            this.notice = document.getElementsByClassName("notice-msg")[0];
+            this.i = document.getElementsByTagName("i");
+            //console.log(this.notice);
+
+            this.addEvent()
+        }
+        addEvent(){
+            var that = this;
+            this.btn.onclick = function(){
+               // console.log(that.user.value);
+                that.setLocal();
+
+            }
+        }
+        setLocal(){
+            checkName();
+            checkPass();
+            twopass();
+            var that = this;
+            this.userMsg = localStorage.getItem("userMsg");
+            this.userMsg = this.userMsg ? JSON.parse(this.userMsg) : [];
+            console.log(this.userMsg)
+            //判断该用户名有没有被注册过
+                var result = this.userMsg.some(val=>{
+                    return val.user === this.user.value;
+                })
+                if(result){
+                    this.notice.innerHTML="账号已注册!"
+                    this.notice.style.display = "block";
+                    this.notice.style.left = "0px";
+                    function no(){
+                        that.notice.style.display = "none";
+                        // location.href = "login.html"
+                    }
+                    setTimeout(function(){
+                        no();
+                    },1000);
+                }else if(checkName()&&checkPass()&&twopass()){  
+                    this.userMsg.push({
+                                user:this.user.value,
+                                pass:this.pass.value,
+                                onoff:0
+                            })
+                    localStorage.setItem("userMsg",JSON.stringify(this.userMsg));
+                    
+                } 
+            }
+        }
+    
+
+    new regist();
+</script>
+<script>
+    //校验用户名
+    function checkName(){
+        //获取用户输入的值
+        var userName = document.getElementById("user").value;
+        var userspan = document.querySelector(".phone span");
+        if(userName.length==0){
+            userspan.style.display = "block";
+            userspan.innerHTML="非空".fontcolor("blue");
+            return false;
+        }
+        else if(userName.length>0){
+        var reg = /^[a-z][a-z0-9]{5}$/i;
+
+        //正则判断
+        if(reg.test(userName)){
+            userspan.style.display = "block";
+            userspan.innerHTML = "正确".fontcolor("green");
+            return true;
+        }else{//不符合规则
+            userspan.style.display = "block";
+            userspan.innerHTML = "错误".fontcolor("red");
+            return false;
+        }
+    }
+}
+
+    //校验密码
+    function checkPass(){
+        var password = document.getElementById("pass").value;
+        var passSpan = document.querySelector(".userpass span");
+        if(password.length==0){
+            passSpan.style.display = "block";
+            passSpan.innerHTML="非空".fontcolor("blue");
+            return false;
+        }
+        else if(password.length>0){
+            var reg = /^\w{6}$/;
+            if(reg.test(password)){
+                //符合规则
+                passSpan.style.display = "block";
+                passSpan.innerHTML="正确".fontcolor("green");
+                return true;
+            }else{
+                //不符合规则
+                passSpan.style.display = "block";
+                passSpan.innerHTML="错误".fontcolor("red");
+                return false;
+            }
+        }
+    }
+
+    //检验密码是否正确
+    function twopass(){
+        var password1 = document.getElementById("pass").value;
+        var password2 = document.getElementById("twopass").value;
+        var twospan = document.querySelector(".userpass2 span");
+        if(password2.length==0){
+            twospan.style.display = "block";
+            twospan.innerHTML="非空".fontcolor("blue");
+            return false;
+        }
+        else if(password2.length>0){
+            
+            if(password1.valueOf()==password2.valueOf()){
+                twospan.style.display = "block";
+                twospan.innerHTML="正确".fontcolor("green");
+                return true;        
+            }else{
+                twospan.style.display = "block";
+                twospan.innerHTML="不一致".fontcolor("red");
+                return false;
+            }
+
+        }
+    }
+
+
+    //校验表单是否可以提交了，表单项都返回true才可以提交
+    function checkForm(){
+        var userName = checkName();
+        var pass  = checkPass();
+        var ensure  = twopass();
+        if(userName,pass,ensure){
+            return true;
+        }else{
+            return false;
+        }
+    }
+</script>
+</html>

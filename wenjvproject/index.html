@@ -35,9 +35,9 @@
         <div class="head-nav">
             <div class="head-w">
                 <p class="hl">
-                    您好！游客 &nbsp;欢迎来文具1号商城！
-                    <a href="/login.html">登录</a>
-                    <a href="/regist.html" class="f">免费注册</a>
+                    您好！<span>游客</span> &nbsp;欢迎来文具1号商城！
+                    <a href="login.html">登录</a>
+                    <a href="regist.html" class="f">免费注册</a>
                 </p>
                 <div class="hr">
                     <ul>
@@ -146,7 +146,7 @@
                 </div>
                 <ul>
                     <li><a href="">品牌街</a></li>
-                    <li><a href="">商品列表</a></li>
+                    <li><a href="Listgoods.html">商品列表</a></li>
                     <li><a href="">文具1号超市</a></li>
                     <li><a href="">积分商城</a></li>
                     <li><a href="">设备租贷</a></li>
@@ -869,7 +869,7 @@
             }
         </script>
         <!-- banner-DBsmall jquery代码 -->
-         <script type="text/javascript">
+         <!-- <script type="text/javascript">
             var t = n = 0,
             count;
             $(document).ready(function() {
@@ -902,7 +902,7 @@
                 n = n >= (count - 1) ? 0 : ++n;
                 $(".menusml li").eq(n).trigger('click');
             }
-        </script> -->
+        </script> --> -->
 
 
         <div class="menuWrap">
@@ -1658,13 +1658,15 @@
 
    
   </script>
-  <!-- louceng模块化 -->
+  
   
 </body>
 <script src="ajax.js"></script>
 <script src="cookie.js"></script>
 <script src="libs/require.js"></script>
 
+
+<!-- louceng模块化 -->
 <script>
     require(["libs/jquery","module/tab","module/tost"],function(_,tab,toast){
         var t1 = new tab({
@@ -1680,6 +1682,37 @@
     })
  </script>
 
+ <!-- 登录成功后的代码 -->
+ <script>
+     class Index{
+         constructor(){
+            this.span = document.querySelector(".hl span");
+            //console.log(this.span);
+            this.getLocal();
+            this.login();
+            
+         }
+         getLocal(){
+             this.userMsg = localStorage.getItem("userMsg");
+             this.userMsg = this.userMsg ? JSON.parse(this.userMsg) : [];
+
+         }
+         login(){
+             this.i = 0;
+             var result = this.userMsg.some((val,index)=>{
+                 this.i = index;
+                 return val.onoff == 1;
+             });
+             if(result){
+                 this.span.innerHTML = this.userMsg[this.i].user;
+             }
+         }
+
+     }
+     new Index();
+
+ 
+ </script>
 
 </body>
 </html>

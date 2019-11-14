@@ -14,8 +14,21 @@
         .main .main-nei{width:1100px;padding:36px 0;margin:0 auto;}
         .main .main-nei .bgt{width:630px;height:390px;float:left;}
         .main .main-nei .bgt img{width:630px;height:390px;margin:10px 30px 0 0;}
-        .main .main-nei .page{width:365px;height:367px;padding:0 37px;padding-top:38px;margin-top:10px;background:#fff;float:left;}
-        .main .main-nei .page p{color:#E9242B;font-size:20px;font-family:"微软雅黑"}
+        .main .main-nei .page{position:relative;width:365px;height:367px;padding:0 37px;padding-top:38px;margin-top:10px;background:#fff;float:left;}
+        .main .main-nei .page .notice-msg{width:369px;height:30px;padding-left:70px;background:url(imgs/ld-r.png) no-repeat 40px center #ffe6e6;position:absolute;line-height:30px;top:0;font-size:13px;color:#2a343f;left:-440px;display:none;}
+
+        .main .main-nei .page p{color:#E9242B;font-size:20px;font-weight:bold;font-family:"微软雅黑";}
+        .main .main-nei .page .username{background:url(imgs/username-logo.png) no-repeat 15px center;}
+        .main .main-nei .page .userpass{background:url(imgs/pwd-logo.png) no-repeat 15px center;}
+        .main .main-nei .page .from-row{border:1px solid #a3a3a3;height:50px;border-radius:6px;padding-left:50px;margin-top:20px;position:relative;}
+        .main .main-nei .page .from-row input{line-height:48px;border:0;width:260px;font-size:14px;height:48px;}
+        input:focus { outline: none; }
+        .main .main-nei .page .line-row{margin-top:10px;font-size:13px;overflow:hidden;}
+        .main .main-nei .page .line-row a{color:#3399ff;cursor: pointer;text-decoration:none;}
+        .main .main-nei .page .line-row a.mzhh{float:right;color:#333;}
+        .main .main-nei .page .line-row a.mzhh span{color:#3399ff;}
+        .btn{width:100%;height:49px;line-height:49px;color:#fff;background:#c40001;font-size:20px;font-weight:400;border:none;margin:15px 0;outline:none;}
+
     </style>
 </head>
 
@@ -37,10 +50,94 @@
             </div>
             <!-- page页 -->
             <div class="page">
+                <div class="notice-msg"></div>
                 <p>账号密码登录</p>
+                <form class="yan" action="">
+                    <div class="from-row username">
+                        <input type="text" id="user" placeholder="支付账号/采购账号/邮箱/手机号">
+                    </div>
+                    <div class="from-row userpass">
+                        <input type="password" id="pass" placeholder="请输入密码">
+                    </div>
+
+                </form>
+
+                <div class="line-row">
+                    <a href="./mMResetPassword.html" target="_blank">忘记密码</a>
+                    <a class="mzhh" href="regist.html">还没有账号？<span>快速注册</span></a>
+                </div>
+                <button class="btn login" type="submit" id="dlbtn" tabindex="5">登录</button>
 
             </div>
         </div>
     </div>
 </body>
+<script>
+    class login{
+        constructor(){
+            this.user = document.getElementById("user");
+            this.pass = document.getElementById("pass");
+            this.btn = document.getElementById("dlbtn");
+            this.notice = document.getElementsByClassName("notice-msg")[0];
+            //console.log(this.notice);
+            this.addEvent();
+            this.getLocal();
+
+        }
+        addEvent(){
+            var that = this;
+            this.btn.onclick = function(){
+                that.login();
+            }
+        }
+
+        getLocal(){
+            //判断登录的账号是否存在
+            this.userMsg = localStorage.getItem("userMsg");
+            this.userMsg = this.userMsg ? JSON.parse(this.userMsg) : [];
+
+        }
+
+        login(){
+            var i= 0;
+            var result = this.userMsg.some((val,index)=>{
+                i = index;
+                return val.user==this.user.value && val.pass == this.pass.value;
+                console.log(val.user,this.user.value);
+                console.log(val.pass,this.pass.value);
+            })
+            if(result){
+                var that = this;
+                this.notice.innerHTML="登录成功!即将跳转到首页面..."
+                this.userMsg[i].onoff = 1;
+                    this.notice.style.display = "block";
+                    this.notice.style.left = "0px";
+                    function no(){
+                        that.notice.style.display = "none";
+                        location.href = "index.html"
+                    }
+                    setTimeout(function(){
+                        no();
+                    },800);
+            }else{  
+                    
+                    this.notice.innerHTML="请先去注册!"
+                    this.notice.style.display = "block";
+                    this.notice.style.left = "0px";
+                    function no(){
+                        that.notice.style.display = "none";
+                        // location.href = "regist.html"
+                    }
+                    setTimeout(function(){
+                        no();
+                    },800);
+            }
+            localStorage.setItem("userMsg",JSON.stringify(this.userMsg))
+        }
+       
+
+    }
+    new login();
+
+</script>
 </html>

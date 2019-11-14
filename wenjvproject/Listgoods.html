@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #main{margin-top:10px;position:relative;margin:0 auto;width:1190px;}
+        #main .ItemList{width:1190px;}
+        #main .ItemList::before{display:table;content:"";overflow:hidden;}
+        #main .ItemList::after{content:"";display:block;height:0;clear:both;}
+        #main .ItemList .product{margin-left:4px;width:234px;height:342px;position:relative;float:left;margin-bottom:20px;line-height:1.5;overflow:visible;z-index:1;background-color:#fff;padding:4px;border:1px solid #f5f5f5;}
+        #main .ItemList .product .product-img{width:220px;height:220px;position: relative;padding-bottom:5px;}
+        #main .ItemList .product .product-img a{width:220px;height:220px;text-align:center;vertical-align: middle;}
+        #main .ItemList .product .product-img img{width:220px;height:220px;display:block;margin:0 auto;}
+        #main .ItemList .product .price{font-family: 'arial';color:#c00;height:30px;line-height:30px;overflow: hidden;margin-bottom:3px;margin-top:0;}
+        #main .ItemList .product .price em{float:left;color:#c00;font-size:20px;margin-right:6px;font-style:normal;}
+        #main .ItemList .product .price em b{margin-right:2px;font-weight:700;font-size:14px;vertical-align:middle;}
+        #main .ItemList .product .title{display:block;height:16px;line-height:12px;word-break:break-all;margin-bottom:3px;margin-top:0px;}
+        #main .ItemList .product .title a{color:#666;font-size:12px;line-height:18px;text-decoration:none;}
+
+    </style>
+</head>
+<body>
+    <!-- 商品列表部分 -->
+    <div id="main">
+        <div class="ItemList">
+            <div class="product">
+                <div class="product-img">
+                    <a href="" class="productImg">
+                        <img src="imgs/kBarYj12078504382.jpg!!_220X220_!!.jpg" alt="金万年 中性笔 0.5mm 水笔 签字笔">
+                    </a>
+                </div>
+                <p class="price">
+                    <em>
+                        <b>￥</b>
+                        9.41
+                    </em>
+                </p>
+                <p class="title">
+                    <a href="" title="金万年 中性笔 0.5mm 水笔 签字笔">
+                            金万年 中性笔 0.5mm 水笔 水笔 签字笔 G-1009 12支装                                
+                    </a>
+                </p>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+</body>
+</html>
